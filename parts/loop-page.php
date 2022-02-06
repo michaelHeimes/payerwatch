@@ -11,13 +11,15 @@
 	</header> <!-- end article header -->
 					
     <section class="entry-content" itemprop="text">
-	    <?php the_content(); ?>
+<!-- 	    <?php the_content(); ?> -->
+	    
+	    <?php get_template_part( 'parts/loop', 'modules' ); ?>
+	    
 	</section> <!-- end article section -->
 						
 	<footer class="article-footer">
-		 <?php wp_link_pages(); ?>
+<!-- 		 <?php wp_link_pages(); ?> -->
 	</footer> <!-- end article footer -->
 						    
-	<?php comments_template(); ?>
 					
 </article> <!-- end article -->

@@ -41,7 +41,7 @@ require_once(get_template_directory().'/functions/acf-options.php');
 //require_once(get_template_directory().'/functions/acf-blocks.php');
 
 // Disable Gutenberg
-// require_once(get_template_directory().'/functions/disable-gutenberg.php'); 
+require_once(get_template_directory().'/functions/disable-gutenberg.php'); 
 
 // Add Page Slug to Body Class
 // require_once(get_template_directory().'/functions/page-slug-body-class.php');

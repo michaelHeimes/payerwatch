@@ -34,7 +34,6 @@ jQuery( document ).ready(function($) {
 	}
 			
 	_app.init = function() {
-		
 		// Standard Functions
 		_app.emptyParentLinks();
 		_app.fixed_nav_hack();

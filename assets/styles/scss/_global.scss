@@ -3,6 +3,46 @@
 Stylesheet: Global Stylesheet
 
 *************************************************/
+/*********************
+TYPOGRAPHY
+*********************/
+h1,
+.h1 {
+	line-height: .942;
+}
+
+h2,
+.h2 {
+	line-height: 1.19;
+}
+
+h3,
+.h3 {
+	line-height: 1.2857;
+}
+
+.jumbo {
+	font-size: rem-calc(130);
+	line-height: 1.107;
+}
+
+p,
+.p {
+	font-size: rem-calc(14);	
+}
+
+.medium-copy,
+.medium-copy p {
+	font-size: rem-calc(20);
+	line-height: 1.5;
+}
+
+.large-copy,
+.large-copy p {
+	font-size: rem-calc(30);
+	
+}
+
 
 /*********************
 POSTS & CONTENT STYLES

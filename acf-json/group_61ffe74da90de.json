@@ -1,0 +1,52 @@
+{
+    "key": "group_61ffe74da90de",
+    "title": "Logo Color",
+    "fields": [
+        {
+            "key": "field_61ffe760b05f8",
+            "label": "Color",
+            "name": "logo_color",
+            "type": "radio",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "navy": "Navy",
+                "white": "White",
+                "mint": "Mint"
+            },
+            "allow_null": 0,
+            "other_choice": 0,
+            "default_value": "navy",
+            "layout": "vertical",
+            "return_format": "value",
+            "save_other_choice": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "page"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "side",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": [
+        "the_content"
+    ],
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1644161951
+}

@@ -12,4 +12,4 @@
 		get_the_category_list(', ')
 	);
 	?>
-</p>	
+</p>
