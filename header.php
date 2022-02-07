@@ -36,7 +36,7 @@
 			
 	<body <?php body_class(); ?>>
 				
-		<header class="header" role="banner" data-sticky data-margin-top="0" data-sticky-on="small">
+		<header class="header" role="banner">
 					
 			 <!-- This navs will be applied to the topbar, above all content 
 				  To see additional nav styles, visit the /parts directory -->

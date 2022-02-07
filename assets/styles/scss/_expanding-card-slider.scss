@@ -1,0 +1,24 @@
+.expanding-card-slider {
+	.slider {
+		width: 450px;
+		overflow: visible;
+		
+		.slick-list {
+			overflow: visible;
+		}
+		
+		.single-slide {
+			margin: 0 10px;
+			width: 314px;
+			
+
+		&.widen {
+			width: 450px;
+			transition: width .5s ease;
+		}
+
+			
+		}
+		
+	}
+}

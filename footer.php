@@ -8,10 +8,11 @@
  */			
  ?>
 					
-				<footer class="footer" role="contentinfo">
+				<footer class="footer navy-bg" role="contentinfo">
 					<div class="grid-container">
 						<div class="inner-footer grid-x grid-padding-x">
-							<div class="logo-wrap cell shrink">
+							
+							<div class="logo-wrap cell small-12 tablet-shrink">
 								<ul class="menu">
 									<li class="menu show-for-sr"><a href="<?php echo home_url(); ?>"><?php bloginfo('name'); ?></a></li>
 									<li class="logo footer-logo"><a href="<?php echo home_url(); ?>">
@@ -24,16 +25,69 @@
 								</ul>
 							</div>
 							
-							<div class="small-12 medium-12 large-12 cell">
-								<nav role="navigation">
-		    						<?php joints_footer_links(); ?>
-		    					</nav>
-		    				</div>
-							
-							<div class="small-12 medium-12 large-12 cell">
+							<div class="small-12 tablet-auto xlarge-offset-1">
+								<div class="grid-x grid-padding-x">
+									<div class="cell small-12 medium-6">
+										
+										<div class="grid-x grid-padding-x small-up-2">
+											<div class="cell">
+												<h3 class="mint">Location</h3>
+												<a href="<?php the_field('directions_url', 'option');?>" target="_blank">
+													<?php the_field('address', 'option');?>
+												</a>
+											</div>
+											<div class="cell">
+												<h3 class="mint">Get In Touch</h3>
+												<div>
+													<a href="tel:<?php the_field('phone_number', 'option');?>">
+														+<?php the_field('phone_number', 'option');?>
+													</a>
+												</div>
+												<div>
+													<a href="mailto:<?php the_field('email_address', 'option');?>">
+														<?php the_field('email_address', 'option');?>
+													</a>
+												</div>
+											</div>	
+											<div class="cell">
+												<h3 class="mint">Hours</h3>
+												<?php the_field('hours', 'option');?>
+											</div>			
+											<div class="cell">
+												<?php joints_social_links(); ?>
+											</div>												
+										</div>
+										
+									</div>
+									
+									<div class="cell small-12 medium-6">
+										
+										<div class="grid-x grid-padding-x">
+											<div class="cell">
+												<h3 class="mint">Sitemap</h3>
+											</div>
+											<div class="cell small-6">
+												<nav role="navigation">
+						    						<?php joints_footer_links1(); ?>
+						    					</nav>
+						    				</div>
+		
+											<div class="cell small-6">
+												<nav role="navigation">
+						    						<?php joints_footer_links2(); ?>
+						    					</nav>
+						    				</div>
+											
+											<div class="cell">
+												
+											</div>
+									
+										</div>
+										
+									</div>
 								
+								</div>
 							</div>
-						
 						</div> <!-- end #inner-footer -->
 					</div>
 					

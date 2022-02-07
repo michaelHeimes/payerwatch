@@ -2,29 +2,13 @@
 // Register menus
 register_nav_menus(
 	array(
-		'util-nav'		=> __( 'The Utility Menu', 'jointswp' ),		// Utility nav in header
 		'main-nav'		=> __( 'The Main Menu', 'jointswp' ),		// Main nav in header
 		'offcanvas-nav'	=> __( 'The Off-Canvas Menu', 'jointswp' ),	// Off-Canvas nav
-		'footer-tours'	=> __( 'Footer Tours', 'jointswp' ),		// Secondary nav in footer		
-		'footer-links'	=> __( 'Footer Links', 'jointswp' ),		// Secondary nav in footer
+		'footer-links1'	=> __( 'Footer Links Left', 'jointswp' ),		// Secondary nav in footer
+		'footer-links2'	=> __( 'Footer Links Right', 'jointswp' ),		// Secondary nav in footer
 		'social-links'	=> __( 'Social Links', 'jointswp' ),		// Secondary nav in footer		
-		'review-links'	=> __( 'Review Links', 'jointswp' )		    // Secondary nav in footer		
 	)
 );
-
-// The Utility Menu
-function joints_util_nav() {
-	wp_nav_menu(array(
-		'container'			=> false,						// Remove nav container
-		'menu_id'			=> 'utility-nav',					// Adding custom nav id
-		'menu_class'		=> 'medium-horizontal menu',	// Adding custom nav class
-		'items_wrap'		=> '<ul id="%1$s" class="%2$s" data-responsive-menu="accordion medium-dropdown">%3$s</ul>',
-		'theme_location'	=> 'util-nav',					// Where it's located in the theme
-		'depth'				=> 5,							// Limit the depth of the nav
-		'fallback_cb'		=> false,						// Fallback function (see below)
-		'walker'			=> new Topbar_Menu_Walker()
-	));
-}
 
 // The Top Menu
 function joints_top_nav() {
@@ -32,7 +16,7 @@ function joints_top_nav() {
 		'container'			=> false,						// Remove nav container
 		'menu_id'			=> 'main-nav',					// Adding custom nav id
 		'menu_class'		=> 'medium-horizontal menu',	// Adding custom nav class
-		'items_wrap'		=> '<ul id="%1$s" class="%2$s" data-responsive-menu="accordion medium-dropdown" data-submenu-toggle="true" data-hover-delay="0" data-closing-time="0">%3$s</ul>',
+		'items_wrap'		=> '<ul id="%1$s" class="%2$s" data-responsive-menu="accordion medium-dropdown" data-submenu-toggle="true" data-hover-delay="10" data-closing-time="10" data-alignment="left">%3$s</ul>',
 		'theme_location'	=> 'main-nav',					// Where it's located in the theme
 		'depth'				=> 5,							// Limit the depth of the nav
 		'fallback_cb'		=> false,						// Fallback function (see below)
@@ -69,25 +53,26 @@ class Off_Canvas_Menu_Walker extends Walker_Nav_Menu {
 	}
 }
 
-// The Footer Tour Menu
-function joints_footer_tours_links() {
+
+// The Footer Menu
+function joints_footer_links1() {
 	wp_nav_menu(array(
 		'container'			=> 'false',				// Remove nav container
-		'menu_id'			=> 'footer-tours',		// Adding custom nav id
-		'menu_class'		=> 'menu',				// Adding custom nav class
-		'theme_location'	=> 'footer-tours',		// Where it's located in the theme
+		'menu_id'			=> 'footer-links1',		// Adding custom nav id
+		'menu_class'		=> 'menu vertical',				// Adding custom nav class
+		'theme_location'	=> 'footer-links1',		// Where it's located in the theme
 		'depth'				=> 0,					// Limit the depth of the nav
 		'fallback_cb'		=> ''					// Fallback function
 	));
 } /* End Footer Menu */
 
 // The Footer Menu
-function joints_footer_links() {
+function joints_footer_links2() {
 	wp_nav_menu(array(
 		'container'			=> 'false',				// Remove nav container
-		'menu_id'			=> 'footer-links',		// Adding custom nav id
-		'menu_class'		=> 'menu',				// Adding custom nav class
-		'theme_location'	=> 'footer-links',		// Where it's located in the theme
+		'menu_id'			=> 'footer-links2',		// Adding custom nav id
+		'menu_class'		=> 'menu vertical',				// Adding custom nav class
+		'theme_location'	=> 'footer-links2',		// Where it's located in the theme
 		'depth'				=> 0,					// Limit the depth of the nav
 		'fallback_cb'		=> ''					// Fallback function
 	));
@@ -100,18 +85,6 @@ function joints_social_links() {
 		'menu_id'			=> 'social-links',		// Adding custom nav id
 		'menu_class'		=> 'menu',				// Adding custom nav class
 		'theme_location'	=> 'social-links',		// Where it's located in the theme
-		'depth'				=> 0,					// Limit the depth of the nav
-		'fallback_cb'		=> ''					// Fallback function
-	));
-} /* End Social Links Menu */
-
-// The Review Links Menu
-function joints_review_links() {
-	wp_nav_menu(array(
-		'container'			=> 'false',				// Remove nav container
-		'menu_id'			=> 'review-links',		// Adding custom nav id
-		'menu_class'		=> 'menu',				// Adding custom nav class
-		'theme_location'	=> 'review-links',		// Where it's located in the theme
 		'depth'				=> 0,					// Limit the depth of the nav
 		'fallback_cb'		=> ''					// Fallback function
 	));
@@ -158,74 +131,18 @@ add_filter( 'nav_menu_css_class', 'required_active_nav_class', 10, 2 );
 		
 		// var_dump($args);
 		
-		if ( $args->theme_location == 'main-nav') {
-			
-			// loop
-			foreach( $items as &$item ) {
-				
-				// vars
-				$icon = get_field('icon', $item);
-				$bg_img = get_field('dropdown_background_image', $item);
-				$size = 'full';
-				$imgArr = wp_get_attachment_image_src( $bg_img, $size );
-						
-				// append icon
-				if( $icon ) {
-					
-					$item->title = '<span class="title-icon-wrap"><span class="icon" aria-hidden="true">' . wp_get_attachment_image( $icon, $size ) . '</span>' . $item->title . '</span>';
-					
-				}
-				
-				// append bg image
-				if( $bg_img ) {
-					
-					$item->title = '<div class="bg" style="background-image: url(' . $imgArr[0] . ')"></div><span class="title-icon-wrap">' . $item->title . '</span>';
-					
-				}	
-				
-			}
-			
-			
-			// return
-			return $items;
-			
-		} elseif ( $args->theme_location != 'main-nav' && 'main-navigation' !== $args->menu->slug && $args->theme_location != 'social-links' && $args->theme_location != 'review-links') {
-			
-			// loop
-			foreach( $items as &$item ) {
-				
-				// vars
-				$icon = get_field('icon', $item);
-				$blue_icon = get_field('icon_blue', $item);
-				$size = 'full';
-				$imgArr = wp_get_attachment_image_src( $bg_img, $size );
-						
-				// append icon
-				if( $icon ) {
-					
-					$item->title = '<span class="title-icon-wrap"><span class="icon orange" aria-hidden="true">' . wp_get_attachment_image( $icon, $size ) . '</span><span class="icon blue" aria-hidden="true">' . wp_get_attachment_image( $blue_icon, $size ) . '</span>' . $item->title . '</span>';
-					
-				}
-				
-			}
-			
-			
-			// return
-			return $items;
-				
-		} elseif ( $args->theme_location == 'social-links' || 'main-navigation' != $args->menu->slug && $args->theme_location == 'review-links' ) {
+		if ( $args->theme_location == 'social-links') {
 
 			// loop
 			foreach( $items as &$item ) {
 				
 				// vars
 				$icon = get_field('icon', $item);
-				$size = 'full';
-						
+				$size = 'full';						
 				// append icon
 				if( $icon ) {
 					
-					$item->title = '<span class="icon" aria-hidden="true">' . wp_get_attachment_image( $icon, $size ) . '</span><span class="show-for-sr"' . $item->title . '</span>';
+					$item->title = '<span class="icon" aria-hidden="true"><img class="style-svg" src="' . $icon['url'] . '" alt="' . $icon['alt'] . '"></span><span class="show-for-sr"' . $item->title . '</span>';
 					
 				}
 				
@@ -247,57 +164,7 @@ add_filter('wp_nav_menu_objects', 'my_wp_nav_menu_objects', 10, 2);
 
 
 
-// add hook that shows submenu of parent link
-add_filter( 'wp_nav_menu_objects', 'my_wp_nav_menu_objects_sub_menu', 10, 2 );
 
-// filter_hook function to react on sub_menu flag
-function my_wp_nav_menu_objects_sub_menu( $sorted_menu_items, $args ) {
-  if ( isset( $args->sub_menu ) ) {
-    $root_id = 0;
-    
-    // find the current menu item
-    foreach ( $sorted_menu_items as $menu_item ) {
-      if ( $menu_item->current ) {
-        // set the root id based on whether the current menu item has a parent or not
-        $root_id = ( $menu_item->menu_item_parent ) ? $menu_item->menu_item_parent : $menu_item->ID;
-        break;
-      }
-    }
-    
-    // find the top level parent
-    if ( ! isset( $args->direct_parent ) ) {
-      $prev_root_id = $root_id;
-      while ( $prev_root_id != 0 ) {
-        foreach ( $sorted_menu_items as $menu_item ) {
-          if ( $menu_item->ID == $prev_root_id ) {
-            $prev_root_id = $menu_item->menu_item_parent;
-            // don't set the root_id to 0 if we've reached the top of the menu
-            if ( $prev_root_id != 0 ) $root_id = $menu_item->menu_item_parent;
-            break;
-          } 
-        }
-      }
-    }
-
-    $menu_item_parents = array();
-    foreach ( $sorted_menu_items as $key => $item ) {
-      // init menu_item_parents
-      if ( $item->ID == $root_id ) $menu_item_parents[] = $item->ID;
-
-      if ( in_array( $item->menu_item_parent, $menu_item_parents ) ) {
-        // part of sub-tree: keep!
-        $menu_item_parents[] = $item->ID;
-      } else if ( ! ( isset( $args->show_parent ) && in_array( $item->ID, $menu_item_parents ) ) ) {
-        // not part of sub-tree: away with it!
-        unset( $sorted_menu_items[$key] );
-      }
-    }
-    
-    return $sorted_menu_items;
-  } else {
-    return $sorted_menu_items;
-  }
-}
 
 
 

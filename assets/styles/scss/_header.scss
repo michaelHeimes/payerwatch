@@ -1,9 +1,8 @@
 header.header {
+	width: 100%;
+	position: fixed;
+	z-index: 99999;
 	transition: transform .5s ease;
-	
-	.top-bar-wrap {
-		background-color: $topbar-background;
-	}
 	
 	#top-bar-menu {
 		padding-top: .2rem;
@@ -43,13 +42,11 @@ header.header {
 				
 				a {
 					color: $white;
-					font-size: rem-calc(18);
+					font-size: rem-calc(14);
 					text-transform: uppercase;
-					letter-spacing: .075px;
-					
-					@include breakpoint(large) {
-						font-size: rem-calc(22);
-					}
+					line-height: rem-calc(12);
+					font-weight: bold;
+					padding: 0.5314rem 1.011rem;
 					
 				&:hover {
 					text-decoration: underline;
@@ -57,36 +54,67 @@ header.header {
 					
 				}
 				
-			&.menu-item-has-children {
-				margin-top: -.4rem;
-				margin-bottom: 0;
-			
+			&.outlined {
 				a {
-					padding-right: 2.28rem;
-					
+					padding: 0.5314rem 1.011rem;
+					border: 1px solid $white;
+				}
+			}
+				
+			&.menu-item-has-children {
+			
+				> a {					
+					position: relative;
 					&:after {
-						right: 12px;
+						content: '';
+						right: 4px;
 						width: 10px;
 						height: 5px;
 						border: 0;
 						background-size: contain;
 					    background-position: center;
 					    background-repeat: no-repeat;						
-// 						background-image: url(../images/chev-down-white.svg);
+						background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='9.965' height='5.888' viewBox='0 0 9.965 5.888'%3E%3Cpath id='Path_9856' data-name='Path 9856' d='M4.982,0,4.077.906,7.506,4.335l.619.647h0l-.619.647L4.077,9.059l.906.906L9.965,4.982Z' transform='translate(9.965 -4.077) rotate(90)' fill='%23fff'/%3E%3C/svg%3E%0A");
 					}
 					
 				}
 				
 				ul.submenu {
+					background-color: $white;
+					box-shadow: 0px 3px 6px 0px rgba(0,0,0,0.51);
+					
 					li {
 						a {
-
-							
-						&:hover {
-
+							position: relative;
+							color: $brand-navy;
+							font-weight: 400;
 						}
-							
+						
+					&.menu-item-has-children {
+						> a {
+							&:after {
+								content: '';
+								left: auto;
+								right: 4px;
+								width: 10px;
+								height: 5px;
+								margin-top: 0;
+								border: 0;
+								background-size: contain;
+							    background-position: center;
+							    background-repeat: no-repeat;							
+								background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='5.888' height='9.965' viewBox='0 0 5.888 9.965'%3E%3Cpath id='Path_9883' data-name='Path 9883' d='M4.982,0,4.077.906,7.506,4.335l.619.647h0l-.619.647L4.077,9.059l.906.906L9.965,4.982Z' transform='translate(-4.077)' fill='%23050d57'/%3E%3C/svg%3E%0A");
+							}							
 						}
+						
+					}
+						
+					&:hover,
+					&.active {
+						> a {
+							background-color: $brand-mint;
+						}
+					}
 						
 					}
 				}

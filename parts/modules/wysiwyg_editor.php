@@ -1,4 +1,4 @@
-<section class="wysiwyg-editor module<?php if(get_sub_field('remove_top_padding')):?> no-top-padding<?php endif;?><?php if(get_sub_field('remove_bottom_padding')):?> no-bottom-padding<?php endif;?>">
+<section class="wysiwyg-editor module">
 	<div class="grid-container">
 		<div class="grid-x grid-padding-x">
 

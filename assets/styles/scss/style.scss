@@ -68,5 +68,14 @@ CSS file.
 @include foundation-float-classes;
 
 // Import your custom styles
+
+// Vendor
+@import "slick";
+
+// Sections
 @import "global";
 @import "header";
+
+// Modules
+@import "part-home-banner.scss";
+@import "expanding-card-slider";

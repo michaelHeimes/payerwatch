@@ -59,4 +59,4 @@ require_once(get_template_directory().'/functions/disable-gutenberg.php');
 // require_once(get_template_directory().'/functions/login.php'); 
 
 // Customize the WordPress admin
-// require_once(get_template_directory().'/functions/admin.php'); 
+require_once(get_template_directory().'/functions/admin.php'); 

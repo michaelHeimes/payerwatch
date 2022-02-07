@@ -8,20 +8,16 @@
 get_header(); ?>
 	
 	<div class="content">
-	
-		<div class="inner-content grid-x grid-padding-x">
-	
-		    <main class="main small-12 cell" role="main">
-				
-				<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+		
+	    <main class="main" role="main">
+			
+			<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
-			    	<?php get_template_part( 'parts/loop', 'page' ); ?>
-			    
-			    <?php endwhile; endif; ?>							
-			    					
-			</main> <!-- end #main -->
+		    	<?php get_template_part( 'parts/loop', 'page' ); ?>
 		    
-		</div> <!-- end #inner-content -->
+		    <?php endwhile; endif; ?>							
+		    					
+		</main> <!-- end #main -->	    
 
 	</div> <!-- end #content -->
 

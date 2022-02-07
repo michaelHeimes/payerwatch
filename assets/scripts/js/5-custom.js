@@ -32,11 +32,50 @@ jQuery( document ).ready(function($) {
 		});
 
 	}
+	
+	_app.expanding_card_slider = function() {
+		if( $('.expanding-card-slider').length ) {
+			$('.expanding-card-slider').each(function( index ) {
+				let $slider = $(this).find('.slider');
+				
+				$($slider).slick({
+					infinite: false,
+					slidesToShow: 1,
+					slidesToScroll: 1,
+					arrows: false,
+					dots: true,
+					rows: 0,
+					variableWidth: true,
+				}).on({
+					afterChange: function (event, slick, currentSlide, nextSlide) {
+						let $slide = $($slider).find('.single-slide');
+						
+						$($slide).each(function( index ) {
+							
+							console.log($(this));
+							
+							if( $(this).hasClass('slick-current') ) {
+								$(this).addClass('widen');
+							} else {
+								$(this).removeClass('widen');
+							}
+													
+						});
+
+					}
+				});
+				
+				
+			});
+		}
+
+	}
 			
 	_app.init = function() {
 		// Standard Functions
 		_app.emptyParentLinks();
 		_app.fixed_nav_hack();
+		_app.expanding_card_slider();
 	}
 
 

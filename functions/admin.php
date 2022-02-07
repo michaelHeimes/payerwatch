@@ -4,7 +4,7 @@
 /************* CUSTOMIZE ADMIN *******************/
 // Custom Backend Footer
 function joints_custom_admin_footer() {
-// 	_e('<span id="footer-thankyou">Developed by <a href="https://proprdesign.com/" target="_blank">Propr Design</a></span>.', 'jointswp');
+ 	_e('<span id="footer-thankyou">Developed by <a href="https://proprdesign.com/" target="_blank">Propr Design</a></span>.', 'jointswp');
 }
 
 // adding it to the admin area
@@ -56,10 +56,16 @@ add_filter('admin_footer_text', 'joints_custom_admin_footer');
 		$style_formats = array(  
 			// Each array child is a format with it's own settings
 	        array(  
-	            'title' => 'Large Blue Text',  
+	            'title' => 'Large Text',  
 	            'block' => 'span',  
-	            'classes' => 'large-blue-text',
+	            'classes' => 'large-copy',
 	            'wrapper' => true,
+	        ),
+	        array(  
+	            'title' => 'Button',  
+	            'selector' => 'a',  
+	            'classes' => 'button mint-bg post-btn',
+	            'wrapper' => false,
 	        ),
 		);
 		// Insert the array, JSON ENCODED, into 'style_formats'
