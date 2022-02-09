@@ -1,0 +1,161 @@
+.team-preview {
+	height: 600px;
+	position: relative;
+	
+	.inner {
+		position: relative;
+		
+		@include breakpoint(medium) {
+			margin-right: 2.25rem;
+		}
+		
+		@include breakpoint(large) {
+			margin-right: 124px;
+		}
+	
+		.single-card {
+			position: absolute;
+			width: 329px;
+			top: 50%;
+			left: 50%;
+			right: 0;
+			z-index: 1;
+			padding: 1.3em 4em 2.1em 3em;
+			border-radius: 4px;
+			background-color: $brand-sky-blue;
+			transition: all 1s ease;
+			
+			@include breakpoint(medium) {
+				max-width: 460px;
+				padding: 1.3em 3em 2.1em;
+			}
+			
+		&[data-order="1"] {
+			position: relative;
+			z-index: 3;
+			background-color: $brand-blue;
+			transform: translate( 0%, 0%) scale(1);
+		}
+		
+		&[data-order="2"],
+		&[data-order="3"] {
+			opacity: 1;
+
+			transform: translate(-50%, 0);
+			
+			@include breakpoint(medium) {
+				transform: translate(-50%, 0);
+			}
+			
+			
+		}
+
+		&[data-order="2"] {
+			z-index: 2;
+		}
+		
+		&[data-order="3"] {
+			z-index: 1;
+		}
+			
+			h4 {
+				text-transform: uppercase;
+				font-size: rem-calc(20);
+				font-weight: bold;
+				letter-spacing: 2px;
+				line-height: 1.25;
+				margin-bottom: 1.3em;	
+			}
+			
+			.copy-wrap {
+				color: rgba(18,5,143, .23);
+				padding-top: 0.5em;
+				
+				ul {
+					padding-top: .5em;
+					
+					li {
+						padding-bottom: 0.25em;
+					}
+					
+				}
+			}
+			
+			a {
+			}
+
+		}
+		
+	}
+	
+	.cards-nav {
+		position: absolute;
+		z-index: 4;
+		top: 90px;
+	    right: 16px;
+	    
+		@include breakpoint(medium) {
+			right: 48px;
+		}
+		
+		@include breakpoint(tablet) {
+			top: 0;
+			right: 0;
+		}
+		
+		.card-number {
+			
+			.slash {
+				
+				span {
+				}
+				
+			}	
+					
+		}
+		
+	}
+	
+&.active {
+	
+	.inner {
+		
+		.single-card {
+	
+		&[data-order="1"] {
+			z-index: 3;
+			transform: translate(-50%, 0) scale(.7);
+			
+			@include breakpoint(medium) {
+				transform: translate(-50%, 0) scale(1);
+			}
+			
+		}
+
+		&[data-order="2"] {
+			z-index: 2;
+			transform: translate(-10%, -50%);
+			
+			@include breakpoint(medium) {
+				transform: translate(-10%, -50%)  scale(.7);
+			}
+			
+		}
+		
+		&[data-order="3"] {
+			z-index: 1;
+			transform: translate(-90%, -50%)  scale(.7);
+			
+			@include breakpoint(medium) {
+				transform: translate(-90%, -50%)  scale(.7);
+			}
+			
+		}
+		
+		}
+		
+	}
+	
+}
+	
+}	

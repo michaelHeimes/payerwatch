@@ -34,7 +34,7 @@ const SOURCE = {
 		FOUNDATION + '/dist/js/plugins/foundation.drilldown.js',
 // 		FOUNDATION + '/dist/js/plugins/foundation.dropdown.js',
 		FOUNDATION + '/dist/js/plugins/foundation.dropdownMenu.js',
-// 		FOUNDATION + '/dist/js/plugins/foundation.equalizer.js',
+		FOUNDATION + '/dist/js/plugins/foundation.equalizer.js',
 // 		FOUNDATION + '/dist/js/plugins/foundation.interchange.js',
 		FOUNDATION + '/dist/js/plugins/foundation.offcanvas.js',
 // 		FOUNDATION + '/dist/js/plugins/foundation.orbit.js',

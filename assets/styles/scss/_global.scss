@@ -127,8 +127,14 @@ POSTS & CONTENT STYLES
 	}
 } 
 
-button:not(.large):not([role="tab"]),
-.button:not(.large) {
+.archive-tag {
+	font-size: rem-calc(14);
+	font-weight: bold;
+	text-transform: uppercase;
+}
+
+button:not(.large):not([role="tab"]):not(.team-dot),
+.button:not(.large):not([role="tab"]):not(.team-dot) {
 	line-height: 1;
 	letter-spacing: .05px;
 	text-transform: uppercase;
@@ -161,9 +167,6 @@ a.button.large {
 	text-transform: none;
 	border: 0;
 	position: relative;
-
-	
-
 
 	span {
 		position: relative;		
@@ -235,7 +238,8 @@ a.button.large {
 	background-image: linear-gradient(180deg, #201dd0 0%, #0e0f7f 18.2%, #0b0e5c 34.5%, #050a38 55.7%, #0b032e 100%);
 }
 
-ul.slick-dots {
+ul.slick-dots,
+ul.card-nav {
 	list-style: none;
 	padding: 0;
 	margin: 0;

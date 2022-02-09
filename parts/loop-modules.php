@@ -13,6 +13,10 @@
 	elseif ( get_row_layout() == 'expanding_card_slider' ) : 
 	
 		get_template_part('parts/modules/expanding_card_slider');
+
+	elseif ( get_row_layout() == 'team_preview' ) : 
+	
+		get_template_part('parts/modules/team_preview');
 		
 	elseif ( get_row_layout() == 'two_news_posts' ) : 
 	
