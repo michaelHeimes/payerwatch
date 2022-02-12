@@ -73,6 +73,36 @@ jQuery( document ).ready(function($) {
 
 	}
 	
+	_app.has_scrolled = function() {
+
+		// Fixed nav trigger
+		$(window).on("load scroll resize", function(e) {
+			var header_height = 50;
+			var sticky_height = 150;
+			var fade_height = 200;
+			
+			if ($(this).scrollTop() > (header_height)) {
+				$('body').addClass('sticky-header');
+			} else {
+				$('body').removeClass('sticky-header');
+			}
+
+			if ($(this).scrollTop() > (header_height + sticky_height)) {
+				$('body').addClass('fade-header');
+			} else {
+				$('body').removeClass('fade-header');
+			}
+
+			if ($(this).scrollTop() > (header_height + sticky_height + fade_height)) {
+				$('body').addClass('has-scrolled');
+			} else {
+				$('body').removeClass('has-scrolled');
+			}
+
+		});
+
+	};
+	
 	_app.team_cards = function() {
 				
 		if($('.team-preview').length) {
@@ -90,6 +120,22 @@ jQuery( document ).ready(function($) {
 			const $easeIn = 'power2.in';
 			const $easeOut = 'power2.out';
 			
+			gsap.from( $slider, {
+				autoAlpha: .5,
+				scaleX: .9,
+				scaleY: .9,
+				ease: 'circ.out',
+				duration: .7,
+				scrollTrigger: {
+					start: 'top 80%',
+					end: 'bottom top',
+					toggleActions: "play none none reverse",
+					trigger: $slider,
+					toggleClass: {targets: '.team-preview', className: 'active'},
+				}
+			});	
+			
+/*
 			ScrollTrigger.create({
 			    trigger: '.team-preview .inner',
 			    start: 'top 75%',
@@ -98,6 +144,7 @@ jQuery( document ).ready(function($) {
 				toggleClass: {targets: '.team-preview', className: 'active'},
 				toggleActions: 'play none play reverse',
 			});
+*/
 
 			$( '.card-nav button').click(function(e){
 				$order = $(this).data('order');
@@ -218,6 +265,7 @@ jQuery( document ).ready(function($) {
 		// Standard Functions
 		_app.emptyParentLinks();
 		_app.fixed_nav_hack();
+		_app.has_scrolled();
 		_app.expanding_card_slider();
 		_app.team_cards();
 	}

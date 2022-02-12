@@ -135,88 +135,25 @@ POSTS & CONTENT STYLES
 
 button:not(.large):not([role="tab"]):not(.team-dot),
 .button:not(.large):not([role="tab"]):not(.team-dot) {
-	line-height: 1;
-	letter-spacing: .05px;
-	text-transform: uppercase;
-	font-weight: bold;
-	border: 2px solid $brand-navy;
-	transition: all .25s ease;
-	
-&:hover {
-	color: $brand-royal;
-	border-color: $brand-royal;
-}
 
-&.post-btn {
-	width: 100%;
-	font-size: rem-calc(24);
-	line-height: 1;
-	color: $brand-navy;
-	border-color: $brand-mint;
-}
 	
 }
 
-button.large,
-a.button.large {
-	display: inline-flex;
-	padding: 0;
-	overflow: hidden;
-	font-weight: 600;
-	color: $white;
-	text-transform: none;
-	border: 0;
+fh {
+	height: 100%;
+}
+
+.has-bg {
 	position: relative;
+	overflow: hidden;
+}
 
-	span {
-		position: relative;		
-		&.gradient {
-			display: block;
-			padding: 1.375rem 4.05rem 1.375rem 1.8312rem;
-			background-image: linear-gradient(-90deg, rgba(27,17,149,1) 0%, rgba(48,36,221,1) 100%);
-			
-			&:before {
-				content: '';
-				position: absolute;
-				top: 0;
-				left: 0;
-				right: 0;
-				bottom: 0;
-				width: 100%;
-				opacity: 1;
-				background-image: linear-gradient(90deg, rgba(27,17,149,1) 0%, rgba(48,36,221,1) 100%);
-				transition: all 1s ease;
-			}			
-		}
-		
-		&.arrow {
-			display: flex;
-			align-items: center;
-			justify-content: center;
-			position: absolute;
-			right: 0;
-			top: 0;
-			bottom: 0;
-			padding: .594rem;
-			transition: background-color .3s ease;
-		}
-		
-		&.text {
-			position: relative;
-			z-index: 1;
-		}
-		
-	}
-	
-	&:hover {
-		span.gradient:before {
-			opacity: 0;
-		}
-		.arrow {
-			background-color: #00E37B;
-		}
-	}
-	
+.bg {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
 }
 
 .blue-bg {
@@ -234,8 +171,111 @@ a.button.large {
 	color: $white;
 }
 
-.royal-navy-gradient-bg {
+.royal-navy-gradient-bg,
+body.home.has-scrolled header.header {
 	background-image: linear-gradient(180deg, #201dd0 0%, #0e0f7f 18.2%, #0b0e5c 34.5%, #050a38 55.7%, #0b032e 100%);
+}
+
+button, 
+a.button {
+	line-height: 1;
+	letter-spacing: .05px;
+	text-transform: uppercase;
+	font-weight: bold;
+	border: 2px solid $brand-navy;
+	transition: all .25s ease;
+	
+	&:hover {
+		color: $brand-royal;
+		border-color: $brand-royal;
+	}
+	
+	&.post-btn {
+		width: 100%;
+		font-size: rem-calc(24);
+		line-height: 1;
+		color: $brand-navy;
+		border-color: $brand-mint;
+	}
+
+	&.mint-bg {
+		border-color: $brand-mint;
+		background-color: $brand-mint;
+		color: $brand-navy;
+		
+	&:hover {
+		border-color: #00E37B;
+		background-color: #00E37B;
+	}
+	
+	}
+	
+	&.large {
+		display: inline-flex;
+		padding: 0;
+		overflow: hidden;
+		font-weight: 600;
+		color: $white;
+		text-transform: none;
+		border: 0;
+		position: relative;
+	
+		span {
+			position: relative;		
+			&.gradient {
+				display: block;
+				padding: 1.375rem 4.05rem 1.375rem 1.8312rem;
+				background-image: linear-gradient(-90deg, rgba(27,17,149,1) 0%, rgba(48,36,221,1) 100%);
+				
+				&:before {
+					content: '';
+					position: absolute;
+					top: 0;
+					left: 0;
+					right: 0;
+					bottom: 0;
+					width: 100%;
+					opacity: 1;
+					background-image: linear-gradient(90deg, rgba(27,17,149,1) 0%, rgba(48,36,221,1) 100%);
+					transition: all 1s ease;
+				}			
+			}
+			
+			&.arrow {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				position: absolute;
+				right: 0;
+				top: 0;
+				bottom: 0;
+				padding: .594rem;
+				transition: background-color .3s ease;
+			}
+			
+			&.text {
+				position: relative;
+				z-index: 1;
+			}
+			
+		}
+		
+		&:hover {
+			span.gradient:before {
+				opacity: 0;
+			}
+			.arrow {
+				background-color: #00E37B;
+			}
+		}
+
+	}
+
+}
+
+button.large,
+a.button.large {
+	
 }
 
 ul.slick-dots,

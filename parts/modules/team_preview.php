@@ -9,7 +9,7 @@
 			<div class="cell small-12 medium-6 large-offset-1">
 
 				<?php if( have_rows('slider') ):?>
-				<div class="inner slider" data-slide="1" data-equalizer data-equalize-on="small">
+				<div class="inner slider" data-slide="1" data-equalizer data-equalize-on="small" data-equalize-on-stack="true">
 					<?php while ( have_rows('slider') ) : the_row();?>
 					
 					<?php $order_number = get_row_index();?>	

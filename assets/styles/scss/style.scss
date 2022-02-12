@@ -77,6 +77,9 @@ CSS file.
 @import "header";
 
 // Modules
-@import "part-home-banner";
+@import "banners";
+@import "home-banner";
+@import "page-banner";
 @import "expanding-card-slider";
 @import "team-preview";
+@import "copy-and-arrow-checklist";

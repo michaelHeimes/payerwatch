@@ -1,17 +1,11 @@
 header.header {
 	width: 100%;
 	position: fixed;
-	z-index: 99999;
+	z-index: 999;
 	transition: transform .5s ease;
 	
 	#top-bar-menu {
-		padding-top: .2rem;
-		padding-bottom: .2rem;
-		
-		@include breakpoint(tablet) {
-			padding-top: .35rem;
-			padding-bottom: 0;
-		}
+		min-height: 101px;
 		
 		.top-bar-left {
 			max-width: 160px;
@@ -162,4 +156,13 @@ header.header {
 	
 	}
 	
+}
+
+body.has-scrolled:not(.home) {
+	header.header {
+		background-color: $white;
+		#top-bar-menu #main-nav>li a {
+			color: $brand-blue;
+		}
+	}
 }

@@ -5,6 +5,22 @@
 	<?php if ( get_row_layout() == 'home_banner' ) : 
 	
 		get_template_part('parts/modules/home_banner');
+
+	elseif ( get_row_layout() == 'page_banner' ) : 
+	
+		get_template_part('parts/modules/page_banner');
+
+	elseif ( get_row_layout() == 'appeal_letter_template' ) : 
+	
+		get_template_part('parts/modules/appeal_letter_template');
+
+	elseif ( get_row_layout() == 'blue_background_cta' ) : 
+	
+		get_template_part('parts/modules/blue_background_cta');
+
+	elseif ( get_row_layout() == 'copy_and_arrow_checklist' ) : 
+	
+		get_template_part('parts/modules/copy_and_arrow_checklist');
 		
 	elseif ( get_row_layout() == 'copy_and_image' ) : 
 	
@@ -14,9 +30,17 @@
 	
 		get_template_part('parts/modules/expanding_card_slider');
 
+	elseif ( get_row_layout() == 'partner_quotes_slider' ) : 
+	
+		get_template_part('parts/modules/partner_quotes_slider');
+
 	elseif ( get_row_layout() == 'team_preview' ) : 
 	
 		get_template_part('parts/modules/team_preview');
+
+	elseif ( get_row_layout() == 'trusted_partners' ) : 
+	
+		get_template_part('parts/modules/trusted_partners');
 		
 	elseif ( get_row_layout() == 'two_news_posts' ) : 
 	

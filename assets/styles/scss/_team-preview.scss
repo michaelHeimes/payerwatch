@@ -2,6 +2,8 @@
 	height: 600px;
 	position: relative;
 	
+	
+	
 	.inner {
 		position: relative;
 		
@@ -33,18 +35,16 @@
 		&[data-order="1"] {
 			position: relative;
 			z-index: 3;
-			background-color: $brand-blue;
-			transform: translate( 0%, 0%) scale(1);
+			transform: translate( -100%, 0) scale(1);
 		}
 		
 		&[data-order="2"],
 		&[data-order="3"] {
 			opacity: 1;
-
-			transform: translate(-50%, 0);
+			transform: translate(-100%, -50%) scale(.7);
 			
 			@include breakpoint(medium) {
-				transform: translate(-50%, 0);
+				transform: translate(-100%, -50%) scale(.7);
 			}
 			
 			
@@ -123,6 +123,7 @@
 		.single-card {
 	
 		&[data-order="1"] {
+			background-color: $brand-blue;			
 			z-index: 3;
 			transform: translate(-50%, 0) scale(.7);
 			
