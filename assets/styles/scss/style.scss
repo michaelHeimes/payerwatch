@@ -41,7 +41,7 @@ CSS file.
 // @include foundation-button-group;
 // @include foundation-callout;
 // @include foundation-card;
-@include foundation-close-button;
+// @include foundation-close-button;
 @include foundation-menu;
 // @include foundation-menu-icon;
 // @include foundation-drilldown-menu;
@@ -56,7 +56,7 @@ CSS file.
 // @include foundation-progress-bar;
 // @include foundation-slider;
 @include foundation-sticky;
-// @include foundation-reveal;
+@include foundation-reveal;
 // @include foundation-switch;
 // @include foundation-table;
 // @include foundation-tabs;
@@ -83,3 +83,10 @@ CSS file.
 @import "expanding-card-slider";
 @import "team-preview";
 @import "copy-and-arrow-checklist";
+@import "graphic-and-stats";
+@import "image-copy-button-cards";
+@import "pq-slider";
+@import "webinar-slider";
+@import "experts";
+
+@import "color-themes";

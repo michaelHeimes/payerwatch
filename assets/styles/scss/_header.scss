@@ -2,7 +2,7 @@ header.header {
 	width: 100%;
 	position: fixed;
 	z-index: 999;
-	transition: transform .5s ease;
+	transition: transform .5s ease, background-color .3s ease;
 	
 	#top-bar-menu {
 		min-height: 101px;

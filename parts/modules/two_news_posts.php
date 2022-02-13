@@ -14,7 +14,7 @@
 			    
 			    while ( $loop->have_posts() ) : $loop->the_post();
 				
-				get_template_part('parts/loop', 'archive-news');
+				get_template_part('parts/loop', 'archive-news-card');
 							    
 			    endwhile;
 			wp_reset_postdata(); 

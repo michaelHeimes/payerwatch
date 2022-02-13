@@ -3,6 +3,8 @@
 	$pull_wide = get_sub_field('pull_wide_optional');
 	$img_or_vid = get_sub_field('image_or_video');
 	$btn_style = get_sub_field('button_style');
+	$click_enlarge = get_sub_field('click_to_enlarge');
+	$mod_row = get_row_Index();
 ?>
 <section class="copy-image module <?php echo $pull_wide;?>">
 	<div class="grid-container">
@@ -14,6 +16,33 @@
 					$image = get_sub_field('image');
 					if( !empty( $image ) ): ?>
 					<div class="img-wrap">
+						
+						<?php if($click_enlarge):?>
+							<div class="reveal" id="modal-<?php echo $mod_row;?>" data-reveal>
+							<?php 
+							$image = get_sub_field('image_for_modal');
+							if( !empty( $image ) ): ?>
+							<div class="btn-wrap text-right">
+								<button class="close-button" data-close aria-label="Close modal" type="button">
+									<svg xmlns="http://www.w3.org/2000/svg" width="35.536" height="35.536" viewBox="0 0 35.536 35.536">
+									  <g id="Group_1187" data-name="Group 1187" transform="translate(-1184.082 -2634.732)">
+									    <line id="Line_1" data-name="Line 1" x1="32" y2="32" transform="translate(1185.85 2636.5)" fill="none" stroke="#fff" stroke-width="5"/>
+									    <line id="Line_2" data-name="Line 2" x2="32" y2="32" transform="translate(1185.85 2636.5)" fill="none" stroke="#fff" stroke-width="5"/>
+									  </g>
+									</svg>
+								</button>
+							</div>
+							<div class="img-wrap">
+							    <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
+							</div>
+
+							<?php endif; ?>							
+							</div>
+							<button type="button" class="royal-blue-bg grid-x align-middle align-center" data-open="modal-<?php echo $mod_row;?>">
+								<span>Click to<br>enlarge</span>
+							</button>
+						<?php endif;?>
+						
 					    <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
 					</div>
 					<?php endif; ?>		
@@ -62,7 +91,7 @@
 						    $link_title = $link['title'];
 						    $link_target = $link['target'] ? $link['target'] : '_self';
 						    ?>
-						<div class="link-wrap">
+						<div class="link-wrap cell shrink">
 						    <a class="button mint-bg"><?php echo esc_html( $link_title ); ?></a>
 						</div>
 						<?php endif; ?>
@@ -74,7 +103,7 @@
 						    $link_title = $link['title'];
 						    $link_target = $link['target'] ? $link['target'] : '_self';
 						    ?>
-						<div class="link-wrap">
+						<div class="link-wrap cell shrink">
 						    <a class="button blue-bg" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"><?php echo esc_html( $link_title ); ?></a>
 						</div>
 						<?php endif; ?>

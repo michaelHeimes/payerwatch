@@ -18,7 +18,9 @@
             "choices": {
                 "mint-green": "Mint Green",
                 "violet": "Violet",
-                "neon-yellow": "Neon Yellow"
+                "neon-yellow": "Neon Yellow",
+                "blue": "Blue",
+                "lime-blue-gradient": "Lime to Blue Gradient"
             },
             "allow_null": 0,
             "other_choice": 0,
@@ -43,7 +45,7 @@
             {
                 "param": "page",
                 "operator": "!=",
-                "value": "43"
+                "value": "277"
             }
         ]
     ],
@@ -56,5 +58,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1644624669
+    "modified": 1644714791
 }

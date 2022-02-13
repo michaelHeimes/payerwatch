@@ -35,6 +35,13 @@ jQuery( document ).ready(function($) {
 
 	}
 	
+	_app.nav_spacer = function() {
+		$(window).on("load resize", function(e) {
+			let $navHeight = $('#top-bar-menu').outerHeight();
+			$('.banner').css('padding-top', $navHeight);
+		});
+	}
+	
 	_app.expanding_card_slider = function() {
 		if( $('.expanding-card-slider').length ) {
 			$('.expanding-card-slider').each(function( index ) {
@@ -72,13 +79,58 @@ jQuery( document ).ready(function($) {
 		}
 
 	}
+
+
+	_app.partner_quotes = function() {
+		if( $('.pq-slider').length ) {
+			$('.pq-slider').each(function( index ) {
+				let $slider = $(this);
+				
+				$($slider).slick({
+					infinite: false,
+					slidesToShow: 1,
+					slidesToScroll: 1,
+					arrows: false,
+					dots: true,
+					rows: 0,
+					centerMode: true,
+					speed: 500,
+					infinite: true
+				});
+				
+				
+			});
+		}
+	}
+
+	_app.webinars_slider = function() {
+		if( $('.webinars-slider').length ) {
+			$('.webinars-slider').each(function( index ) {
+				let $slider = $(this);
+				
+				$($slider).slick({
+					infinite: false,
+					slidesToShow: 1,
+					slidesToScroll: 1,
+					arrows: false,
+					dots: true,
+					rows: 0,
+					centerMode: true,
+					speed: 500,
+					infinite: true
+				});
+				
+				
+			});
+		}
+	}
 	
 	_app.has_scrolled = function() {
 
 		// Fixed nav trigger
 		$(window).on("load scroll resize", function(e) {
-			var header_height = 50;
-			var sticky_height = 150;
+			var header_height = 101;
+			var sticky_height = 101;
 			var fade_height = 200;
 			
 			if ($(this).scrollTop() > (header_height)) {
@@ -146,12 +198,17 @@ jQuery( document ).ready(function($) {
 			});
 */
 
-			$( '.card-nav button').click(function(e){
+			$('.card-nav li:nth-child(1) button').addClass('clicked');
+			$('.card-nav li:nth-child(1) button').attr('aria-selected', true);
+
+			$('.card-nav button').click(function(e){
 				$order = $(this).data('order');
 				$activeCard = $($slider).attr('data-slide');
 				$(this).addClass('clicked');
+				$(this).attr('aria-selected', true);
 				$(this).parent().siblings().find('button').removeClass('clicked');
-
+				$(this).parent().siblings().find('button').attr('aria-selected', false);
+				
 				if ($order == 1 ) {
 					
 					if ( $($card1).hasClass('front') ) {
@@ -255,7 +312,7 @@ jQuery( document ).ready(function($) {
 				}	
 
 			});
-			
+
 		}
 
 	}
@@ -265,8 +322,11 @@ jQuery( document ).ready(function($) {
 		// Standard Functions
 		_app.emptyParentLinks();
 		_app.fixed_nav_hack();
+		_app.nav_spacer();
 		_app.has_scrolled();
 		_app.expanding_card_slider();
+		_app.partner_quotes();
+		_app.webinars_slider();
 		_app.team_cards();
 	}
 

@@ -1,0 +1,40 @@
+.partner-quotes-slider {
+
+	h2 {
+		font-size: rem-calc(66);
+		line-height: 1.106;
+	}
+
+	.pq-slider {
+		max-width: 700px;
+		margin: auto;
+		
+		.slick-list {
+			overflow: visible;
+	
+		}
+		.pq-slide {
+			max-width: 700px;
+			margin: 14px;
+			background-color: rgba(255,255,255,.05);
+			transition: background-color .3s ease .5s;
+			
+			.img-wrap {
+				width: 80px;
+				height: 80px;
+				border-radius: 100%;
+				border-radius: 100%;
+			}
+			
+			h4 {
+				color: $medium-gray;
+			}
+			
+		&.slick-current {
+			background-color: $white;
+		}
+	
+		}
+	}
+
+}

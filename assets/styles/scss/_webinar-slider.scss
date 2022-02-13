@@ -1,0 +1,22 @@
+.webinars-slider-module {
+
+	h2 {
+		font-size: rem-calc(66);
+		line-height: 1.106;
+	}
+
+	.webinars-slider {
+		max-width: 542px;
+		margin: auto;
+		
+		.slick-list {
+			overflow: visible;
+	
+		}
+		article {
+			max-width: 542px;
+			margin: 3px;	
+		}
+	}
+
+}

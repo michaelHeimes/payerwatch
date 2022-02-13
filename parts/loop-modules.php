@@ -26,6 +26,18 @@
 	
 		get_template_part('parts/modules/copy_and_image');
 
+	elseif ( get_row_layout() == 'graphic_and_stats' ) : 
+	
+		get_template_part('parts/modules/graphic_and_stats');
+
+	elseif ( get_row_layout() == 'blue_bg_copy_and_image_copy_button_link_card' ) : 
+	
+		get_template_part('parts/modules/blue_bg_copy_and_image_copy_button_link_card');
+
+	elseif ( get_row_layout() == 'image_copy_button_cards' ) : 
+	
+		get_template_part('parts/modules/image_copy_button_cards');
+
 	elseif ( get_row_layout() == 'expanding_card_slider' ) : 
 	
 		get_template_part('parts/modules/expanding_card_slider');
@@ -45,6 +57,14 @@
 	elseif ( get_row_layout() == 'two_news_posts' ) : 
 	
 		get_template_part('parts/modules/two_news_posts');
+
+	elseif ( get_row_layout() == 'webinar_cta' ) : 
+	
+		get_template_part('parts/modules/webinar_cta');
+
+	elseif ( get_row_layout() == 'webinars_slider' ) : 
+	
+		get_template_part('parts/modules/webinars_slider');
 	
 	elseif ( get_row_layout() == 'wysiwyg_editor' ) : 
 	

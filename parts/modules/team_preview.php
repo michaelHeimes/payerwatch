@@ -66,7 +66,7 @@
 					<?php $order_number = get_row_index();?>	
 					
 					<li class="single-dot">
-						<button class="button team-dot" data-order="<?php echo $order_number;?>"></button>
+						<button class="button team-dot" role="tab" data-order="<?php echo $order_number;?>"></button>
 					</li>
 				
 					<?php endwhile;?>

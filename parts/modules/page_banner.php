@@ -1,4 +1,5 @@
-<div class="banner page-banner">
+<div class="banner page-banner has-bg">
+	<div class="bg mint-gradient-bg "></div>
 	<div class="grid-container fluid">
 		<div class="grid-x grid-padding-x">
 			<div class="left cell small-12 medium-6 white">

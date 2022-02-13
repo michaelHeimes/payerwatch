@@ -65,17 +65,17 @@
 // 1. Global
 // ---------
 $global-font-size: 100%;
-$global-width: rem-calc(1374);
+$global-width: rem-calc(1300);
 $global-lineheight: 1.5;
 $foundation-palette: (
-  primary: $brand-mint,
+  primary: $brand-royal,
   secondary: #767676,
   success: #3adb76,
   warning: #ffae00,
   alert: #cc4b37,
 );
 $light-gray: #e6e6e6;
-$medium-gray: #cacaca;
+$medium-gray: #9D9D9D;
 $dark-gray: #8a8a8a;
 $black: #0a0a0a;
 $white: #ffffff;
@@ -729,8 +729,8 @@ $responsive-embed-ratios: (
 // 47. Reveal
 // ----------
 
-$reveal-background: $white;
-$reveal-width: 600px;
+$reveal-background: transparent;
+$reveal-width: 968px;
 $reveal-max-width: $global-width;
 $reveal-padding: $global-padding;
 $reveal-border: 1px solid $medium-gray;
