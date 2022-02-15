@@ -5,4 +5,9 @@
 			background-image: linear-gradient(-90deg, #201dd0 0%, #201dd0 18.7%, #bffa2e 76.8%, #bffa2e 100%);
 		}
 	}
+	
+	.copy-image.click-enlarge.copy-right .img-wrap:before {
+		background-color: $brand-mint;
+	}
+	
 }

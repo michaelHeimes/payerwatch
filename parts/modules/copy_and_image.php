@@ -6,7 +6,7 @@
 	$click_enlarge = get_sub_field('click_to_enlarge');
 	$mod_row = get_row_Index();
 ?>
-<section class="copy-image module <?php echo $pull_wide;?>">
+<section class="copy-image module <?php echo $pull_wide;?> <?php if($click_enlarge):?> click-enlarge <?php endif;?> <?php echo $orientation;?> ">
 	<div class="grid-container">
 		<div class="grid-x grid-padding-x<?php if( $orientation == 'copy-left' ):?> medium-flex-dir-row-reverse<?php endif;?>">
 			
@@ -20,8 +20,8 @@
 						<?php if($click_enlarge):?>
 							<div class="reveal" id="modal-<?php echo $mod_row;?>" data-reveal>
 							<?php 
-							$image = get_sub_field('image_for_modal');
-							if( !empty( $image ) ): ?>
+							$modal_image = get_sub_field('image_for_modal');
+							if( !empty( $modal_image ) ): ?>
 							<div class="btn-wrap text-right">
 								<button class="close-button" data-close aria-label="Close modal" type="button">
 									<svg xmlns="http://www.w3.org/2000/svg" width="35.536" height="35.536" viewBox="0 0 35.536 35.536">
@@ -32,14 +32,18 @@
 									</svg>
 								</button>
 							</div>
-							<div class="img-wrap">
-							    <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
+							<div class="modal-img-wrap">
+							    <img src="<?php echo esc_url($modal_image['url']); ?>" alt="<?php echo esc_attr($modal_image['alt']); ?>" />
 							</div>
 
 							<?php endif; ?>							
 							</div>
-							<button type="button" class="royal-blue-bg grid-x align-middle align-center" data-open="modal-<?php echo $mod_row;?>">
-								<span>Click to<br>enlarge</span>
+							<button type="button" class="enlarge-btn relative royal-blue-bg grid-x align-middle align-center" data-open="modal-<?php echo $mod_row;?>">
+								<span class="inner">
+									<span class="blocker"></span>
+									<span class="blocker"></span>
+									<span class="relative">Click to<br>enlarge</span>
+								</span>
 							</button>
 						<?php endif;?>
 						

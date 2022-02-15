@@ -56,12 +56,28 @@ jQuery( document ).ready(function($) {
 					rows: 0,
 					variableWidth: true,
 				}).on({
-					afterChange: function (event, slick, currentSlide, nextSlide) {
-						let $slide = $($slider).find('.single-slide');
+/*
+					beforeChange: function (event, slick, currentSlide, nextSlide) {
+						let $slide = $($slider).find('.single-slide:not(.slick-current)');
 						
 						$($slide).each(function( index ) {
 							
 							console.log($(this));
+							
+							if( $(this).hasClass('slick-current') ) {
+								$(this).removeClass('hide-text');
+							} else {
+								$(this).find('p').css('opacity', '0');
+							}
+													
+						});
+
+					},
+*/
+					afterChange: function (event, slick, currentSlide, nextSlide) {
+						let $slide = $($slider).find('.single-slide');
+						
+						$($slide).each(function( index ) {
 							
 							if( $(this).hasClass('slick-current') ) {
 								$(this).addClass('widen');
@@ -78,6 +94,49 @@ jQuery( document ).ready(function($) {
 			});
 		}
 
+	}
+	
+	
+	_app.g_pipe = function() {
+		if( $('.g-pipe').length ) {
+			$('.g-pipe').each(function( index ) {
+				let gPipe = $(this);
+				
+				gsap.from( gPipe, {
+					width:'0%',
+					ease: 'circ.out',
+					duration: .7,
+					scrollTrigger: {
+						start: 'top 80%',
+						end: 'bottom top',
+						toggleActions: "play none none reverse",
+						trigger: gPipe,
+					}
+				});					
+			
+			});
+		}
+	}
+	
+	_app.arrow_checklist = function() {
+		if( $('.copy-and-arrow-checklist li').length ) {
+			$('.copy-and-arrow-checklist li').each(function( index ) {
+				
+				gsap.from( this, {
+					autoAlpha: 0,
+					y: 50,
+					ease: 'power2.out',
+					duration: .7,
+					scrollTrigger: {
+						start: 'bottom bottom+=25px',
+						end: 'bottom top',
+						toggleActions: "play none none reverse",
+						trigger: this,
+					}
+				});	
+				
+			});
+		}
 	}
 
 
@@ -129,9 +188,9 @@ jQuery( document ).ready(function($) {
 
 		// Fixed nav trigger
 		$(window).on("load scroll resize", function(e) {
-			var header_height = 101;
-			var sticky_height = 101;
-			var fade_height = 200;
+			var header_height = 1;
+			var sticky_height = 1;
+			var fade_height = 0;
 			
 			if ($(this).scrollTop() > (header_height)) {
 				$('body').addClass('sticky-header');
@@ -154,6 +213,38 @@ jQuery( document ).ready(function($) {
 		});
 
 	};
+	
+	_app.page_banners = function() {
+				
+		if($('.page-banner').length) {
+
+			let leftInner = $('.page-banner .left-inner');
+			let bigBtn = $('.page-banner .btn-link');
+			let themeBg = $('.page-banner .theme-color-bg');
+			let bannerImg = $('.page-banner .right img');
+			
+			let tl = gsap.timeline({scrollTrigger:{
+				trigger: '.page-banner',
+				start:"top 75%",
+				end:"bottom top",
+				delay: .1,
+				toggleActions: "play none none reverse",
+			}})
+			.from(leftInner, {
+				y: 70, opacity:0, ease:"power2.inOut", duration:.5
+			})
+			.from(bigBtn, {
+				x: -70, opacity:0, ease:"power2.inOut", duration:.5
+			}, .2)
+			.from(themeBg, {
+				x: -70, ease:"power2.inOut", duration:.5
+			}, .4)
+			.from(bannerImg, {
+				x: -70, opacity:0, ease:"power2.inOut", duration: 1
+			}, .5)
+			
+		}
+	}
 	
 	_app.team_cards = function() {
 				
@@ -324,8 +415,11 @@ jQuery( document ).ready(function($) {
 		_app.fixed_nav_hack();
 		_app.nav_spacer();
 		_app.has_scrolled();
+		_app.page_banners();
 		_app.expanding_card_slider();
 		_app.partner_quotes();
+		_app.g_pipe();
+		_app.arrow_checklist();
 		_app.webinars_slider();
 		_app.team_cards();
 	}

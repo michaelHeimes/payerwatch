@@ -18,6 +18,10 @@
 	
 		get_template_part('parts/modules/blue_background_cta');
 
+	elseif ( get_row_layout() == 'book_a_demo' ) : 
+	
+		get_template_part('parts/modules/book_a_demo');
+
 	elseif ( get_row_layout() == 'copy_and_arrow_checklist' ) : 
 	
 		get_template_part('parts/modules/copy_and_arrow_checklist');

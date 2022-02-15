@@ -1,9 +1,9 @@
-<section class="copy-and-arrow-checklist module has-bg">
+<section class="copy-and-arrow-checklist module">
 	
 	<div class="grid-container">
 		<div class="grid-x grid-padding-x">
-			<div class="has-bg left cell small-12 tablet-6 large-7">
-				<div class="bg royal-blue-bg"></div>
+			<div class="relative left cell small-12 tablet-6 large-7">
+				<div class="bg royal-blue-bg pull-left"></div>
 				<h2 class="white relative"><?php the_sub_field('heading');?></h2>
 				<div class="g-pipe relative">
 					<span></span>

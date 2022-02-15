@@ -1,21 +1,60 @@
 .expanding-card-slider {
 	.slider {
-		width: 450px;
+		//width: 450px;
 		overflow: visible;
 		
 		.slick-list {
 			overflow: visible;
 		}
 		
+		.slick-track {
+			display: flex;
+			margin-left: -10px;
+		}
+		
 		.single-slide {
 			margin: 0 10px;
 			width: 314px;
+			display: flex;
+			height: auto;
 			
+			.inner {
+				width: 100%;
+				padding: 3rem 1.8rem;
+				transition: background-color .3s ease;
+			}
+			
+			h3{
+				max-width: 314px;
+				margin-bottom: 0.75rem;
+			}
+			
+			.hidden {
+				opacity: 0;
+				transition: opacity .25s ease 0s;
+			}
 
 		&.widen {
 			width: 450px;
 			transition: width .5s ease;
+			
+			.inner {
+				background-color: $brand-navy;
+			}
+			
+			.hidden {
+				opacity: 1;
+				transition: opacity .25s ease .45s;
+			}
+			
 		}
+		
+/*
+		&.hide-text p {
+			opacity: 0;
+			transition: opacity .25s ease 0s;
+		}
+*/
 
 			
 		}

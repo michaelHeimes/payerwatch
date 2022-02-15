@@ -1,0 +1,30 @@
+.book-demo {
+
+	.accent {
+// 		position: relative;
+	}
+	.img-wrap {	
+		display: flex;
+		
+		span {
+			display: block;
+			height: 100%;
+			transform: skew(-$skew);
+		&:nth-child(1) {
+			width: 30px;
+			background-color: $brand-mint;
+			margin-right: 20px;
+		}
+		
+		}
+	
+	}
+	
+	
+
+	.link-wrap {
+		padding-top: 8.15rem;
+		padding-bottom: 9.3rem;
+	}
+	
+}

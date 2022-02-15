@@ -1,12 +1,31 @@
 .copy-and-arrow-checklist {
 	
+	.left {
+		padding-top: 3rem;
+		padding-bottom: 3rem;
+		@include breakpoint (medium) {
+			padding: 5.65rem 4.8rem;
+		}
+	}
+	
+	.img-wrap {
+		@include breakpoint (tablet) {
+    		padding-left: 3rem;
+    	}
+	}
+	
 	.list-wrap {
+		@include breakpoint (tablet) {
+			padding-left: 3.8rem;
+		}
+		
 		ul {
 			list-style: none;
 			
 			li {
 				position: relative;
 				padding-left: 2.75rem;
+				padding-bottom: 1.4rem;
 				
 			&:before {
 				content: '';
