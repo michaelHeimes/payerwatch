@@ -407,6 +407,57 @@ jQuery( document ).ready(function($) {
 		}
 
 	}
+	
+// Stats Count Up
+	if ($('.graphic-and-stats').length) {
+		
+		$('.graphic-and-stats').each(function(i) {
+			
+			let $module = $(this);
+		
+			let $num1 = site_js.stats_parent.stat_1.number;
+			let $num2 = site_js.stats_parent.stat_2.number;
+						
+			let counter = { var: 0 };
+			
+			let $value1 = document.getElementById("stat-1");
+			let $value2 = document.getElementById("stat-2");
+		
+			gsap.to(counter, 3, {
+				var: $num1,
+				onUpdate: function() {
+				$value1.innerHTML = numberWithCommas(Math.ceil(counter.var));
+				},
+				ease: Circ.easeOut,
+				scrollTrigger: {
+				    trigger: $value1,
+				    start: 'bottom bottom',
+				    toggleActions: 'play none play reverse'
+				}
+			});
+	
+			var tal2 = document.getElementById("set-2");
+			
+			gsap.to(counter, 3, {
+				var: $num2,
+				onUpdate: function() {
+				$value2.innerHTML = numberWithCommas(Math.ceil(counter.var));
+				},
+				ease: Circ.easeOut,
+				scrollTrigger: {
+				    trigger: $value1,
+				    start: 'bottom bottom',
+				    toggleActions: 'play none play reverse'
+				}
+			});
+						
+			function numberWithCommas(x) {
+				return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+			}
+		
+		});
+		
+	}
 
 			
 	_app.init = function() {

@@ -4,7 +4,6 @@
  */
  $expert_object = get_queried_object();
  $post_name =  $expert_object->post_name;
-
 get_header(); ?>
 			
 <div class="content">
@@ -30,19 +29,19 @@ get_header(); ?>
 							<div class="cell small-12">
 								<h2 class="white"><?php the_sub_field('heading');?></h2>
 								<div class="webinars-slider">
-				
+
 									<?php			
 									$args = array(  
 									    'post_type' => 'interview',
 									    'post_status' => 'publish',
 									    'posts_per_page' => 99999,
-									    'tax_query' => array(
-									        array (
-									            'taxonomy' => 'interview_expert',
-									            'field' => 'slug',
-									            'terms' => $post_name,
-									        )
-									    ),									    
+										'meta_query' => array(
+											array(
+												'key' => 'select_expert',
+												'value' => get_query_var('select_expert'),
+												'compare' => 'LIKE'
+											)
+										)								    
 									);
 									
 									$loop = new WP_Query( $args ); 
@@ -55,6 +54,8 @@ get_header(); ?>
 									    endwhile;
 									wp_reset_postdata(); 
 									?>
+				
+
 				
 								</div>		
 							</div>

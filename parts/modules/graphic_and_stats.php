@@ -21,7 +21,7 @@
 							<span class="before"><?php echo $before;?></span>
 						<?php endif;?>
 						<?php if($number):?>
-							<span class="number"><?php echo $number;?></span>
+							<span id="stat-1" class="number">0</span>
 						<?php endif;?>
 						<?php if($after):?>
 							<span class="after"><?php echo $after;?></span>
@@ -46,7 +46,7 @@
 							<span class="before"><?php echo $before;?></span>
 						<?php endif;?>
 						<?php if($number):?>
-							<span class="number"><?php echo $number;?></span>
+							<span id="stat-2" class="number">0</span>
 						<?php endif;?>
 						<?php if($after):?>
 							<span class="after"><?php echo $after;?></span>

@@ -10,6 +10,28 @@ function site_scripts() {
               
     // Adding scripts file in the footer
     wp_enqueue_script( 'site-js', get_template_directory_uri() . '/assets/scripts/scripts.js', array( 'jquery' ), filemtime(get_template_directory() . '/assets/scripts/js'), true );
+    
+    
+    // Localize Three Columns Stats Numbers 
+	global $post;
+	$id = $post->ID;
+	
+	if(have_rows('modules', $id)) {
+	
+		$modules_array = array();
+	
+		foreach(get_field('modules', $id) as $module) {
+		
+			if ( $module['acf_fc_layout'] == 'graphic_and_stats') {
+		
+				wp_localize_script('site-js', 'site_js', array(  
+				'stats_parent' => $module,			
+				)); 
+				
+			}    
+		}
+	
+	}
    
   	// Adding Adobe Fonts
     wp_enqueue_style( 'adobe-fonts', 'https://use.typekit.net/zqu5vmn.css', array(), time(), false );
