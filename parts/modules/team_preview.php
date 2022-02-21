@@ -32,12 +32,12 @@
 					        <?php echo $title;?> | <?php echo $job_title;?>
 				        </div>
 
-						<div class="copy-wrap">
+						<div class="copy-wrap medium-copy">
 							<?php the_sub_field('text');?>
 						</div>
 						
 						<div class="link-wrap">			
-							<a href="<?php echo esc_url( $permalink ); ?>">
+							<a class="align-middle" href="<?php echo esc_url( $permalink ); ?>">
 					            <span>Meet Expert</span>
 								<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="16" height="16" viewBox="0 0 16 16">
 								  <defs>

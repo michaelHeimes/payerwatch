@@ -29,42 +29,48 @@
 				<?php endif; ?>					
 
 			</div>
-			<div class="right cell small-12 medium-6">
+			<div class="right cell small-12 medium-6 large-5 large-offset-1">
 				<?php 
 				$image = get_sub_field('image');
 				if( !empty( $image ) ): ?>
+				<div class="img-wrap has-bfg">
+					<span class="bg"></span>
 				    <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
+				</div>
 				<?php endif; ?>
 				<div class="accent"></div>
 			</div>
 		</div>
 	</div>
-	<?php if( have_rows('cta') ):?>
-	<div class="banner-cta">
-		<?php while ( have_rows('cta') ) : the_row();?>	
-		<div class="grid-container fluid">
-			<div class="grid-x grid-padding-x align-right">
-				<div class="cell shrink">
-					<div class="grid-x grid-padding-x align-middle blue-bg">
-						<div class="cell auto white">
-							<?php the_sub_field('text');?>
-						</div>
-						<div class="cell shrink">
-							<?php 
-							$link = get_sub_field('button_link');
-							if( $link ): 
-							    $link_url = $link['url'];
-							    $link_title = $link['title'];
-							    $link_target = $link['target'] ? $link['target'] : '_self';
-							    ?>
-							    <a class="button mint-bg" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"><?php echo esc_html( $link_title ); ?></a>
-							<?php endif; ?>					
-						</div>
+</div>
+
+<?php if( have_rows('cta') ):?>
+<div class="banner-cta">
+	<?php while ( have_rows('cta') ) : the_row();?>	
+	<div class="grid-container fluid">
+		<div class="grid-x grid-padding-x align-right">
+			<div class="cell shrink">
+				<div class="inner grid-x grid-padding-x align-middle has-bg">
+					<div class="bg mint-bg"></div>
+					<div class="bg blue-bg"></div>
+					<div class="cell auto white relative">
+						<?php the_sub_field('text');?>
+					</div>
+					<div class="cell shrink relative">
+						<?php 
+						$link = get_sub_field('button_link');
+						if( $link ): 
+						    $link_url = $link['url'];
+						    $link_title = $link['title'];
+						    $link_target = $link['target'] ? $link['target'] : '_self';
+						    ?>
+						    <a class="button mint-bg" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"><?php echo esc_html( $link_title ); ?></a>
+						<?php endif; ?>					
 					</div>
 				</div>
 			</div>
 		</div>
-		<?php endwhile;?>
 	</div>
-	<?php endif;?>
+	<?php endwhile;?>
 </div>
+<?php endif;?>

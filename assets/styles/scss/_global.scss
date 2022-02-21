@@ -235,6 +235,11 @@ button:not(.large):not([role="tab"]):not(.team-dot),
 	color: $white;
 }
 
+.violet-bg {
+	background-color: $brand-violet;
+	color: $white;
+}
+
 .mint-bg,
 .color-theme-mint-green .theme-color-bg {
 	background-color: $brand-mint;

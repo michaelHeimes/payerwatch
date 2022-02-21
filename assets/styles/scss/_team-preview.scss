@@ -57,6 +57,14 @@
 		&[data-order="3"] {
 			z-index: 1;
 		}
+		
+			.photo-wrap {
+				width: 80px;
+				height: 80px;
+				border-radius: 100%;
+				overflow: hidden;
+				margin: auto;
+			}
 			
 			h4 {
 				text-transform: uppercase;
@@ -81,7 +89,21 @@
 				}
 			}
 			
+			.name-title,
 			a {
+				font-weight: bold;
+				font-size: rem-calc(14);
+				line-height: 1.214;
+			}
+			
+			a {
+				display: inline-flex;
+				color: $brand-mint;
+				letter-spacing: .5px;
+				span {
+					display: inline-block;
+					margin-right: 1.0625rem;
+				}
 			}
 
 		}
@@ -151,6 +173,12 @@
 				transform: translate(-90%, -50%)  scale(.7);
 			}
 			
+		}
+		
+		&.front {
+			.copy-wrap {
+				color: $white;
+			}			
 		}
 		
 		}

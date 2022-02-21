@@ -213,6 +213,44 @@ jQuery( document ).ready(function($) {
 		});
 
 	};
+
+	_app.home_banner = function() {
+				
+		if($('.banner.home-banner').length) {
+			
+			gsap.to( '.banner.home-banner .right span', {
+				y: -18,
+				x: 22,
+				ease: 'circ.out',
+				duration: .7,
+				scrollTrigger: {
+					start: 'top 80%',
+					end: 'bottom top',
+					toggleActions: "play none none reverse",
+					trigger: '.banner.home-banner',
+				}
+			});			
+			
+		}
+
+		if($('.banner-cta').length) {
+			
+			gsap.to( '.banner-cta .bg.mint-bg', {
+				y: 23,
+				x: -41,
+				ease: 'circ.out',
+				duration: .7,
+				scrollTrigger: {
+					start: 'top 80%',
+					end: 'bottom top',
+					toggleActions: "play none none reverse",
+					trigger: '.banner-cta',
+				}
+			});			
+			
+		}
+
+	}
 	
 	_app.page_banners = function() {
 				
@@ -289,6 +327,7 @@ jQuery( document ).ready(function($) {
 			});
 */
 
+			$('.team-preview .single-card:nth-child(1)').addClass('front');
 			$('.card-nav li:nth-child(1) button').addClass('clicked');
 			$('.card-nav li:nth-child(1) button').attr('aria-selected', true);
 
@@ -466,6 +505,7 @@ jQuery( document ).ready(function($) {
 		_app.fixed_nav_hack();
 		_app.nav_spacer();
 		_app.has_scrolled();
+		_app.home_banner();
 		_app.page_banners();
 		_app.expanding_card_slider();
 		_app.partner_quotes();

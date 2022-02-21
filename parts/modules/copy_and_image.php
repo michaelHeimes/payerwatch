@@ -4,7 +4,8 @@
 	$img_or_vid = get_sub_field('image_or_video');
 	$btn_style = get_sub_field('button_style');
 	$click_enlarge = get_sub_field('click_to_enlarge');
-	$mod_row = get_row_Index();
+	$special_image_type = get_sub_field('special_image_type');
+	$mod_row = get_row_index();
 ?>
 <section class="copy-image module <?php echo $pull_wide;?> <?php if($click_enlarge):?> click-enlarge <?php endif;?> <?php echo $orientation;?> ">
 	<div class="grid-container">
@@ -15,7 +16,7 @@
 					<?php 
 					$image = get_sub_field('image');
 					if( !empty( $image ) ): ?>
-					<div class="img-wrap">
+					<div class="img-wrap <?php echo $special_image_type;?>">
 						
 						<?php if($click_enlarge):?>
 							<div class="reveal" id="modal-<?php echo $mod_row;?>" data-reveal>
@@ -48,10 +49,23 @@
 						<?php endif;?>
 						
 					    <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
+					    
+					    <?php if($special_image_type = 'expert'):?>
+					    	<div class="expert-credentials">
+						    	<?php the_sub_field('expert_credentials');?>
+					    	</div>
+					    <?php endif;?>
+
+					    <?php if($special_image_type = 'webinar'):?>
+					    	<div class="webinar-label text-right">
+						    	<span class="violet-bg"><span><?php the_sub_field('webinar_label');?></span></span>
+					    	</div>
+					    <?php endif;?>
+					    
 					</div>
 					<?php endif; ?>		
 				<?php endif;?>	
-				<?php if($img_or_vid = 'image'):?>
+				<?php if($img_or_vid = 'video'):?>
 					<div class="video-wrap">
 						<?php
 						
