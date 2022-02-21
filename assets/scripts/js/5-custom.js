@@ -289,8 +289,13 @@ jQuery( document ).ready(function($) {
 		if($('.team-preview').length) {
 			const $slider = $('.team-preview .slider');
 			const $card1 = $('.single-card[data-order="1"]');
+			const $card1Text = $('.single-card[data-order="1"] .copy-wrap');
+			const $card2Text = $('.single-card[data-order="2"] .copy-wrap');
+			const $card3Text = $('.single-card[data-order="3"] .copy-wrap');
 			const $card2 = $('.single-card[data-order="2"]');
 			const $card3 = $('.single-card[data-order="3"]');
+			const $white = '#ffffff';
+			const $lightViolet = 'rgba(18,5,143,.23)';
 			const $skyBlue = '#dce7f0';
 			const $blue = '#12108f';
 			const $scale = .7;
@@ -348,11 +353,14 @@ jQuery( document ).ready(function($) {
 						if ($activeCard == 2) {
 							gsap.to($card1, {duration: $longDuration, x: '-100%', scaleX: $scale, scaleY: $scale, zIndex: 3, ease: $easeOut});						
 							gsap.to($card1, {delay: $longDuration, duration: $shortDuration, x: '0%', scaleX: 1, scaleY: 1, backgroundColor: $blue, zIndex: 4, ease: $easeIn});
+// 							gsap.to($card1Text, {delay: $longDuration, duration: $shortDuration, color: $white, ease: $easeIn});
 							
 							gsap.to($card2, {duration: $longDuration, x: '50%', scaleX: 1, scaleY: 1, zIndex: 4, ease: $easeOut});
 							gsap.to($card2, {delay: $longDuration, duration: $shortDuration, x: $rightMost, scaleX: $scale, scaleY: $scale, backgroundColor: $skyBlue, zIndex: 3, ease: $easeIn});
-							
+							gsap.to($card2Text, {delay: $longDuration, duration: $shortDuration, color: $lightViolet, ease: $easeIn});
+
 							gsap.to($card3, {duration: $longDuration, x: $leftMost, scaleX: $scale, scaleY: $scale, backgroundColor: $skyBlue, zIndex: 1, ease: $easeIn});
+							gsap.to($card3Text, {delay: $longDuration, duration: $shortDuration, color: $lightViolet, ease: $easeIn});
 						}
 
 						if ($activeCard == 3) {
