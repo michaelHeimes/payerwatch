@@ -1,9 +1,9 @@
-<section class="blue-background-cta blue-bg">
+<section class="blue-background-cta module blue-bg color-bg">
 	<div class="grid-container">
 		<div class="grid-x grid-padding-x">
-			<div class="cell small-12 tablet-10 tablet-offset-1">
+			<div class="cell small-12">
 				<div class="grid-x grid-padding-x align-center align-middle">
-					<div class="cell small-12 medium-shrink medium-offset-1">
+					<div class="cell small-12 medium-shrink">
 						<?php 
 						$image = get_field('bbcta_logo', 'option');
 						if( !empty( $image ) ): ?>
@@ -11,7 +11,7 @@
 						<?php endif; ?>		
 					</div>
 					<div class="cell auto">
-						<p><?php the_field('bbcta_text', 'option');?></p>
+						<p class="large-copy"><?php the_field('bbcta_text', 'option');?></p>
 					</div>
 					<div class="cell shrink">
 						<?php 

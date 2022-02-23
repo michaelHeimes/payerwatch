@@ -25,18 +25,18 @@
 								</ul>
 							</div>
 							
-							<div class="small-12 tablet-auto xlarge-offset-1">
+							<div class="right small-12 tablet-auto xlarge-offset-1">
 								<div class="grid-x grid-padding-x">
 									<div class="cell small-12 medium-6">
 										
 										<div class="grid-x grid-padding-x small-up-2">
-											<div class="cell">
+											<div class="item cell location">
 												<h3 class="mint">Location</h3>
 												<a href="<?php the_field('directions_url', 'option');?>" target="_blank">
 													<?php the_field('address', 'option');?>
 												</a>
 											</div>
-											<div class="cell">
+											<div class="item cell in-touch">
 												<h3 class="mint">Get In Touch</h3>
 												<div>
 													<a href="tel:<?php the_field('phone_number', 'option');?>">
@@ -49,21 +49,21 @@
 													</a>
 												</div>
 											</div>	
-											<div class="cell">
+											<div class="item cell hours">
 												<h3 class="mint">Hours</h3>
 												<?php the_field('hours', 'option');?>
 											</div>			
-											<div class="cell">
+											<div class="item social cell">
 												<?php joints_social_links(); ?>
 											</div>												
 										</div>
 										
 									</div>
 									
-									<div class="cell small-12 medium-6">
+									<div class="item cell small-12 medium-6">
 										
 										<div class="grid-x grid-padding-x">
-											<div class="cell">
+											<div class="cell sitemap">
 												<h3 class="mint">Sitemap</h3>
 											</div>
 											<div class="cell small-6">

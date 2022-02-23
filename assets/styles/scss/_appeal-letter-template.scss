@@ -1,0 +1,24 @@
+.appeal-letter-template {
+	
+	.bg.skewed-bg {
+		transform: skew(-$skew) translateX(-50%);	
+	}
+	
+	.left {
+		padding-top: 2.625rem;
+		padding-bottom: 2.625rem;
+		padding-left: 2.875rem;
+		padding-right: 2.03125rem;
+	}
+	
+	.right {
+		padding-top: 2.9rem;
+		padding-bottom: 2.9rem;
+		padding-left: 2.03125rem;
+		.bg {
+			width: 100vw;
+			right: -50vw;
+		}
+	}
+	
+}

@@ -6,7 +6,9 @@
 	
 	.inner {
 		position: relative;
+		margin-right: -.875rem;
 		
+/*
 		@include breakpoint(medium) {
 			margin-right: 2.25rem;
 		}
@@ -14,6 +16,7 @@
 		@include breakpoint(large) {
 			margin-right: 124px;
 		}
+*/
 	
 		.single-card {
 			position: absolute;
@@ -29,7 +32,7 @@
 			
 			@include breakpoint(medium) {
 				max-width: 460px;
-				padding: 1.3em 3em 2.1em;
+				padding: 4.9em 3em 1.7em;
 			}
 			
 		&[data-order="1"] {
@@ -59,11 +62,17 @@
 		}
 		
 			.photo-wrap {
+				opacity: .2;
 				width: 80px;
 				height: 80px;
 				border-radius: 100%;
 				overflow: hidden;
 				margin: auto;
+				margin-bottom: 1rem;
+			}
+			
+			.mint {
+				filter: grayscale(1);
 			}
 			
 			h4 {
@@ -77,7 +86,7 @@
 			
 			.copy-wrap {
 				color: rgba(18,5,143, .23);
-				padding-top: 0.5em;
+				padding-top: 1.25rem;
 				
 				ul {
 					padding-top: .5em;
@@ -105,37 +114,18 @@
 					margin-right: 1.0625rem;
 				}
 			}
+			
+			.link-wrap {
+				padding-top: 5.25rem;
+			}
 
 		}
 		
 	}
 	
-	.cards-nav {
-		position: absolute;
-		z-index: 4;
-		top: 90px;
-	    right: 16px;
-	    
-		@include breakpoint(medium) {
-			right: 48px;
-		}
-		
-		@include breakpoint(tablet) {
-			top: 0;
-			right: 0;
-		}
-		
-		.card-number {
-			
-			.slash {
-				
-				span {
-				}
-				
-			}	
-					
-		}
-		
+	ul.card-nav {
+		padding: 0;
+		margin-top: -13px;
 	}
 	
 &.active {
@@ -153,24 +143,28 @@
 				transform: translate(-50%, 0) scale(1);
 			}
 			
+			.copy-wrap {
+				color: $white;
+			}
+			
 		}
 
 		&[data-order="2"] {
 			z-index: 2;
-			transform: translate(-10%, -50%);
+			transform: translate(5%, -50%);
 			
 			@include breakpoint(medium) {
-				transform: translate(-10%, -50%)  scale(.7);
+				transform: translate(5%, -50%)  scale(.7);
 			}
 			
 		}
 		
 		&[data-order="3"] {
 			z-index: 1;
-			transform: translate(-90%, -50%)  scale(.7);
+			transform: translate(-105%, -50%)  scale(.7);
 			
 			@include breakpoint(medium) {
-				transform: translate(-90%, -50%)  scale(.7);
+				transform: translate(-105%, -50%)  scale(.7);
 			}
 			
 		}

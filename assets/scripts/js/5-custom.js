@@ -289,6 +289,12 @@ jQuery( document ).ready(function($) {
 		if($('.team-preview').length) {
 			const $slider = $('.team-preview .slider');
 			const $card1 = $('.single-card[data-order="1"]');
+			const card1Img = $('.single-card[data-order="1"] .photo-wrap');
+			const card2Img = $('.single-card[data-order="2"] .photo-wrap');
+			const card3Img = $('.single-card[data-order="3"] .photo-wrap');
+			const card1Mint = $('.single-card[data-order="1"] .mint');
+			const card2Mint = $('.single-card[data-order="2"] .mint');
+			const card3Mint = $('.single-card[data-order="3"] .mint');
 			const $card1Text = $('.single-card[data-order="1"] .copy-wrap');
 			const $card2Text = $('.single-card[data-order="2"] .copy-wrap');
 			const $card3Text = $('.single-card[data-order="3"] .copy-wrap');
@@ -299,10 +305,10 @@ jQuery( document ).ready(function($) {
 			const $skyBlue = '#dce7f0';
 			const $blue = '#12108f';
 			const $scale = .7;
-			const $shortDuration = .4;
-			const $longDuration = .6;
-			const $leftMost = '-90%';
-			const $rightMost = '-10%';
+			const $shortDuration = .2;
+			const $longDuration = .4;
+			const $leftMost = '-105%';
+			const $rightMost = '5%';
 			const $easeIn = 'power2.in';
 			const $easeOut = 'power2.out';
 			
@@ -333,6 +339,9 @@ jQuery( document ).ready(function($) {
 */
 
 			$('.team-preview .single-card:nth-child(1)').addClass('front');
+			gsap.to($card1Text, {delay: $longDuration, duration: $shortDuration, color: $white, ease: $easeIn});	
+			gsap.to(card1Img, {delay: $longDuration, duration: $shortDuration, autoAlpha: 1, ease: $easeIn});	
+			gsap.to(card1Mint, {delay: $longDuration, duration: $shortDuration, filter: 'grayscale(0)', ease: $easeIn});							
 			$('.card-nav li:nth-child(1) button').addClass('clicked');
 			$('.card-nav li:nth-child(1) button').attr('aria-selected', true);
 
@@ -349,29 +358,42 @@ jQuery( document ).ready(function($) {
 					if ( $($card1).hasClass('front') ) {
 
 					} else {
+						
+						gsap.to($card1Text, {delay: $longDuration, duration: $shortDuration, color: $white, ease: $easeIn});
+						gsap.to(card1Img, {delay: $longDuration, duration: $shortDuration, autoAlpha: 1, ease: $easeIn});	
+						gsap.to(card1Mint, {delay: $longDuration, duration: $shortDuration, filter: 'grayscale(0)', ease: $easeIn});							
+
+
+						gsap.to($card2Text, {delay: $longDuration, duration: $shortDuration, color: $lightViolet, ease: $easeIn});
+						gsap.to($card3Text, {delay: $longDuration, duration: $shortDuration, color: $lightViolet, ease: $easeIn});
+						gsap.to(card2Img, {delay: $longDuration, duration: $shortDuration, autoAlpha: .2, ease: $easeIn});	
+						gsap.to(card3Img, {delay: $longDuration, duration: $shortDuration, autoAlpha: .2, ease: $easeIn});	
+						gsap.to(card2Mint, {delay: $longDuration, duration: $shortDuration, filter: 'grayscale(1)', ease: $easeIn});	
+						gsap.to(card3Mint, {delay: $longDuration, duration: $shortDuration, filter: 'grayscale(1)', ease: $easeIn});	
+
 
 						if ($activeCard == 2) {
-							gsap.to($card1, {duration: $longDuration, x: '-100%', scaleX: $scale, scaleY: $scale, zIndex: 3, ease: $easeOut});						
+							gsap.to($card1, {duration: $longDuration, x: '-200%', scaleX: $scale, scaleY: $scale, zIndex: 3, ease: $easeOut});						
 							gsap.to($card1, {delay: $longDuration, duration: $shortDuration, x: '0%', scaleX: 1, scaleY: 1, backgroundColor: $blue, zIndex: 4, ease: $easeIn});
-// 							gsap.to($card1Text, {delay: $longDuration, duration: $shortDuration, color: $white, ease: $easeIn});
 							
 							gsap.to($card2, {duration: $longDuration, x: '50%', scaleX: 1, scaleY: 1, zIndex: 4, ease: $easeOut});
 							gsap.to($card2, {delay: $longDuration, duration: $shortDuration, x: $rightMost, scaleX: $scale, scaleY: $scale, backgroundColor: $skyBlue, zIndex: 3, ease: $easeIn});
-							gsap.to($card2Text, {delay: $longDuration, duration: $shortDuration, color: $lightViolet, ease: $easeIn});
 
 							gsap.to($card3, {duration: $longDuration, x: $leftMost, scaleX: $scale, scaleY: $scale, backgroundColor: $skyBlue, zIndex: 1, ease: $easeIn});
-							gsap.to($card3Text, {delay: $longDuration, duration: $shortDuration, color: $lightViolet, ease: $easeIn});
 						}
 
 						if ($activeCard == 3) {
 							gsap.to($card1, {duration: $longDuration, x: '100%', scaleX: $scale, scaleY: $scale, zIndex: 2, ease: $easeOut});						
 							gsap.to($card1, {delay: $longDuration, duration: $shortDuration, x: '0%', scaleX: 1, scaleY: 1, backgroundColor: $blue, zIndex: 4, ease: $easeIn});
+							gsap.to($card1Text, {delay: $longDuration, duration: $shortDuration, color: $white, ease: $easeIn});
 
 							gsap.to($card2, {zIndex: 0});
 							gsap.to($card2, {delay: $longDuration, duration: $longDuration, x: $rightMost, scaleX: $scale, scaleY: $scale, backgroundColor: $skyBlue, zIndex: 0, ease: $easeIn});
+							gsap.to($card2Text, {delay: $longDuration, duration: $shortDuration, color: $lightViolet, ease: $easeIn});
 							
 							gsap.to($card3, {duration: $shortDuration, x: '-150%', scaleX: 1, scaleY: 1, backgroundColor: $blue, zIndex: 4, ease: $easeOut});
 							gsap.to($card3, {delay: $longDuration, duration: $shortDuration, x: $leftMost, scaleX: $scale, scaleY: $scale, backgroundColor: $skyBlue, zIndex: 1, ease: $easeIn});
+							gsap.to($card3Text, {delay: $longDuration, duration: $shortDuration, color: $lightViolet, ease: $easeIn});
 						}
 
 						$($card1).addClass('front');
@@ -388,10 +410,21 @@ jQuery( document ).ready(function($) {
 
 					} else {
 						
+						gsap.to($card2Text, {delay: $longDuration, duration: $shortDuration, color: $white, ease: $easeIn});
+						gsap.to(card2Img, {delay: $longDuration, duration: $shortDuration, autoAlpha: 1, ease: $easeIn});	
+						gsap.to(card2Mint, {delay: $longDuration, duration: $shortDuration, filter: 'grayscale(0)', ease: $easeIn});						
+
+						gsap.to($card1Text, {delay: $longDuration, duration: $shortDuration, color: $lightViolet, ease: $easeIn});
+						gsap.to($card3Text, {delay: $longDuration, duration: $shortDuration, color: $lightViolet, ease: $easeIn});
+						gsap.to(card1Img, {delay: $longDuration, duration: $shortDuration, autoAlpha: .2, ease: $easeIn});	
+						gsap.to(card3Img, {delay: $longDuration, duration: $shortDuration, autoAlpha: .2, ease: $easeIn});	
+						gsap.to(card1Mint, {delay: $longDuration, duration: $shortDuration, filter: 'grayscale(1)', ease: $easeIn});	
+						gsap.to(card3Mint, {delay: $longDuration, duration: $shortDuration, filter: 'grayscale(1)', ease: $easeIn});						
+						
 						if ($activeCard == 1) {
-							gsap.to($card1, {duration: $longDuration, x: '-150%', scaleX: 1, scaleY: 1, backgroundColor: $blue, zIndex: 4, ease: $easeOut});
-							gsap.to($card1, {delay: $longDuration, duration: $shortDuration, x: '-40%', scaleX: $scale, scaleY: $scale, backgroundColor: $skyBlue, zIndex: 3, ease: $easeIn});
-							
+							gsap.to($card1, {duration: $longDuration, x: '-200%', scaleX: 1, scaleY: 1, backgroundColor: $blue, zIndex: 4, ease: $easeOut});
+							gsap.to($card1, {delay: $longDuration, duration: $shortDuration, x: '-55%', scaleX: $scale, scaleY: $scale, backgroundColor: $skyBlue, zIndex: 3, ease: $easeIn});
+														
 							gsap.to($card2, {duration: $longDuration, x: '50%', scaleX: $scale, scaleY: $scale, zIndex: 2, ease: $easeOut});
 							gsap.to($card2, {delay: $longDuration, duration: $shortDuration,  x: '-50%', scaleX: 1, scaleY: 1, backgroundColor: $blue, zIndex: 4, ease: $easeIn});
 							
@@ -399,9 +432,10 @@ jQuery( document ).ready(function($) {
 						}
 						
 						if ($activeCard == 3) {
-							gsap.to($card1, {duration: $longDuration, x: '-50%', scaleX: $scale, scaleY: $scale, backgroundColor: $skyBlue, zIndex: 1, ease: $easeIn});
+							gsap.to($card1, {duration: $longDuration, x: '-55%', scaleX: $scale, scaleY: $scale, backgroundColor: $skyBlue, zIndex: 1, ease: $easeIn});
 							
-							gsap.to($card2, {duration: $longDuration, x: '-160%', scaleX: $scale, scaleY: $scale, zIndex: 2, ease: $easeOut});
+							
+							gsap.to($card2, {duration: $longDuration, x: '-200%', scaleX: $scale, scaleY: $scale, zIndex: 2, ease: $easeOut});
 							gsap.to($card2, {delay: $longDuration, duration: $shortDuration,  x: '-50%', scaleX: 1, scaleY: 1, backgroundColor: $blue, zIndex: 4, ease: $easeIn});
 
 							gsap.to($card3, {duration: $longDuration, x: '100%', scaleX: 1, scaleY: 1, backgroundColor: $blue, zIndex: 4, ease: $easeOut});
@@ -420,25 +454,36 @@ jQuery( document ).ready(function($) {
 					if ( $($card3).hasClass('front') ) {
 
 					} else {
-
+						
+						gsap.to($card3Text, {delay: $longDuration, duration: $shortDuration, color: $white, ease: $easeIn});
+						gsap.to(card3Img, {delay: $longDuration, duration: $shortDuration, autoAlpha: 1, ease: $easeIn});	
+						gsap.to(card3Mint, {delay: $longDuration, duration: $shortDuration, filter: 'grayscale(0)', ease: $easeIn});						
+						
+						gsap.to($card1Text, {delay: $longDuration, duration: $shortDuration, color: $lightViolet, ease: $easeIn});
+						gsap.to($card2Text, {delay: $longDuration, duration: $shortDuration, color: $lightViolet, ease: $easeIn});
+						gsap.to(card1Img, {delay: $longDuration, duration: $shortDuration, autoAlpha: .2, ease: $easeIn});	
+						gsap.to(card2Img, {delay: $longDuration, duration: $shortDuration, autoAlpha: .2, ease: $easeIn});	
+						gsap.to(card1Mint, {delay: $longDuration, duration: $shortDuration, filter: 'grayscale(1)', ease: $easeIn});	
+						gsap.to(card2Mint, {delay: $longDuration, duration: $shortDuration, filter: 'grayscale(1)', ease: $easeIn});						
+						
 						if ($activeCard == 1) {
-							gsap.to($card1, {duration: $longDuration, x: '-115%', scaleX: 1, scaleY: 1, backgroundColor: $blue, zIndex: 3, ease: $easeOut});
-							gsap.to($card1, {delay: $longDuration, duration: $shortDuration, x: '40%', scaleX: $scale, scaleY: $scale, backgroundColor: $skyBlue, zIndex: 1, ease: $easeIn});
+							gsap.to($card1, {duration: $longDuration, x: '-200%', scaleX: 1, scaleY: 1, backgroundColor: $blue, zIndex: 3, ease: $easeOut});
+							gsap.to($card1, {delay: $longDuration, duration: $shortDuration, x: '55%', scaleX: $scale, scaleY: $scale, backgroundColor: $skyBlue, zIndex: 1, ease: $easeIn});
 							
-							gsap.to($card2, {duration: $longDuration, x: '-90%', scaleX: $scale, scaleY: $scale, backgroundColor: $skyBlue, zIndex: 3, ease: $easeIn});
+							gsap.to($card2, {duration: $longDuration, x: '-105%', scaleX: $scale, scaleY: $scale, backgroundColor: $skyBlue, zIndex: 2, ease: $easeIn});
 							
-							gsap.to($card3, {duration: $longDuration, x: '250%', scaleX: $scale, scaleY: $scale, backgroundColor: $skyBlue, zIndex: 1, ease: $easeOut});
+							gsap.to($card3, {duration: $longDuration, x: '500%', scaleX: $scale, scaleY: $scale, backgroundColor: $skyBlue, zIndex: 1, ease: $easeOut});
 							gsap.to($card3, {delay: $longDuration, duration: $shortDuration, x: '-50%', scaleX: 1, scaleY: 1, backgroundColor: $blue, zIndex: 4, ease: $easeIn});
 						}
 						
 						if ($activeCard == 2) {
-							gsap.to($card2, {duration: $longDuration, x: '-110%', scaleX: 1, scaleY: 1, backgroundColor: $blue, zIndex: 4, ease: $easeOut});
-							gsap.to($card2, {delay: $longDuration, duration: $shortDuration, x: '-90%', scaleX: $scale, scaleY: $scale, backgroundColor: $skyBlue, zIndex: 2, ease: $easeIn});
+							gsap.to($card2, {duration: $longDuration, x: '-200%', scaleX: 1, scaleY: 1, backgroundColor: $blue, zIndex: 4, ease: $easeOut});
+							gsap.to($card2, {delay: $longDuration, duration: $shortDuration, x: '-105%', scaleX: $scale, scaleY: $scale, backgroundColor: $skyBlue, zIndex: 2, ease: $easeIn});
 							
 							gsap.to($card3, {duration: $longDuration, x: '90%', scaleX: $scale, scaleY: $scale, backgroundColor: $skyBlue, zIndex: 3, ease: $easeOut});
 							gsap.to($card3, {delay: $longDuration, duration: $shortDuration, x: '-50%', scaleX: 1, scaleY: 1, backgroundColor: $blue, zIndex: 4, ease: $easeIn});
 							
-							gsap.to($card1, {duration: $longDuration, x: '40%', scaleX: $scale, scaleY: $scale, backgroundColor: $skyBlue, zIndex: 3, ease: $easeIn});
+							gsap.to($card1, {duration: $longDuration, x: '55%', scaleX: $scale, scaleY: $scale, backgroundColor: $skyBlue, zIndex: 3, ease: $easeIn});
 						}
 						
 						$($card3).addClass('front');

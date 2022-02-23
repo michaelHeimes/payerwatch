@@ -1,8 +1,13 @@
 .partner-quotes-slider {
+	@include breakpoint(medium) {
+		padding-top: 7rem;
+	}
+	
 
 	h2 {
 		font-size: rem-calc(66);
 		line-height: 1.106;
+		margin-bottom: 2.85rem;
 	}
 
 	.pq-slider {
@@ -11,19 +16,37 @@
 		
 		.slick-list {
 			overflow: visible;
-	
+		}
+		.slick-track {
+			display: flex;
 		}
 		.pq-slide {
 			max-width: 700px;
+			display: flex;
+			height: auto;
 			margin: 14px;
-			background-color: rgba(255,255,255,.05);
-			transition: background-color .3s ease .5s;
+			opacity: .5;
+			transition: opacity .3s ease .5s;
+			
+			.inner {
+				padding: 2.4rem 4.2rem 5.15rem;
+			}
+			
+			.top {
+				margin: 0 -0.5625rem;
+				padding-bottom: 1.75rem;
+			}
 			
 			.img-wrap {
 				width: 80px;
 				height: 80px;
 				border-radius: 100%;
 				border-radius: 100%;
+				margin: 0 0.5625rem;
+			}
+			
+			.name-title {
+				margin: 0 0.5625rem;
 			}
 			
 			h4 {
@@ -31,10 +54,18 @@
 			}
 			
 		&.slick-current {
-			background-color: $white;
+			opacity: 1;
 		}
 	
 		}
 	}
-
+	
+/*
+	ul.slick-dots li button:not[aria-selected=true]:before {
+		background-color: #F1F9FF;
+	}
+*/
+	ul.slick-dots li button:before {
+		background-color: #F1F9FF;
+	}
 }

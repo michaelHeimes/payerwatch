@@ -36,8 +36,8 @@
 							<?php the_sub_field('text');?>
 						</div>
 						
-						<div class="link-wrap">			
-							<a class="align-middle" href="<?php echo esc_url( $permalink ); ?>">
+						<div class="link-wrap text-right">			
+							<a class="align-middle mint" href="<?php echo esc_url( $permalink ); ?>">
 					            <span>Meet Expert</span>
 								<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="16" height="16" viewBox="0 0 16 16">
 								  <defs>
