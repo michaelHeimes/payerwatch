@@ -1,0 +1,32 @@
+.graphic-and-stats {
+	font-family: $header-font-family;
+	font-weight: bold;
+	color: $brand-royal;
+	
+	.col {
+		@include breakpoint(medium down) {
+			margin-bottom: 1.5rem;
+		}
+	}
+
+	.number {
+		font-size: rem-calc(70);
+		line-height: 1.1;
+		
+		@include breakpoint(tablet) {
+			font-size: rem-calc(130);
+		}
+		
+	}
+	
+	.figure-label {
+		font-size: rem-calc(24);
+		line-height: 1.333;
+		
+		@include breakpoint(medium) {
+			font-size: rem-calc(30);
+		}
+		
+	}
+	
+}

@@ -13,7 +13,7 @@
 						<div class="inner-footer grid-x grid-padding-x">
 							
 							<div class="logo-wrap cell small-12 tablet-shrink">
-								<ul class="menu">
+								<ul class="menu logo-menu">
 									<li class="menu show-for-sr"><a href="<?php echo home_url(); ?>"><?php bloginfo('name'); ?></a></li>
 									<li class="logo footer-logo"><a href="<?php echo home_url(); ?>">
 										<?php 

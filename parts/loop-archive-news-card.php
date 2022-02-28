@@ -6,7 +6,7 @@
  */
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class('cell small-12 medium-6'); ?> role="article">		
+<article id="post-<?php the_ID(); ?>" <?php post_class('post-archive-card cell small-12 medium-6'); ?> role="article">		
 	<div class="fh inner navy-bg">				
 		<a class="fh white grid-x flex-dir-column" href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>">
 			<div>

@@ -1,7 +1,7 @@
 <section class="graphic-and-stats module">
 	<div class="grid-container">
-		<div class="grid-x grid-padding-x small-up-1 medium-up-2 tablet-up-3 align-center align-middle">
-			<div class="cell">
+		<div class="grid-x grid-padding-x small-up-1 medium-up-3 tablet-up-3 align-center align-middle">
+			<div class="cell col">
 				<?php 
 				$image = get_sub_field('graphic');
 				if( !empty( $image ) ): ?>
@@ -10,7 +10,7 @@
 			</div>
 			<?php if( have_rows('stat_1') ):?>
 				<?php while ( have_rows('stat_1') ) : the_row();?>	
-				<div class="cell">
+				<div class="cell col">
 					<div class="number grid-x">
 						<?php
 							$before = get_sub_field('before_number');
@@ -35,7 +35,7 @@
 			<?php endif;?>
 			<?php if( have_rows('stat_2') ):?>
 				<?php while ( have_rows('stat_2') ) : the_row();?>	
-				<div class="cell">
+				<div class="cell col">
 					<div class="number grid-x">
 						<?php
 							$before = get_sub_field('before_number');

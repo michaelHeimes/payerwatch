@@ -597,7 +597,7 @@
                             },
                             "choices": {
                                 "solid": "Solid",
-                                "ouline": "Outline"
+                                "outlined": "Outline"
                             },
                             "allow_null": 0,
                             "default_value": "",
@@ -662,7 +662,7 @@
                                     {
                                         "field": "field_620704e5b63a4",
                                         "operator": "==",
-                                        "value": "ouline"
+                                        "value": "outlined"
                                     }
                                 ]
                             ],
@@ -1895,7 +1895,27 @@
                     "name": "webinars_slider",
                     "label": "Webinars Slider",
                     "display": "block",
-                    "sub_fields": [],
+                    "sub_fields": [
+                        {
+                            "key": "field_621c11868f1b9",
+                            "label": "Heading",
+                            "name": "heading",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
+                        }
+                    ],
                     "min": "",
                     "max": ""
                 },
@@ -1954,5 +1974,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1644793439
+    "modified": 1646006670
 }

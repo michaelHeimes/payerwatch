@@ -7,12 +7,12 @@
 	$special_image_type = get_sub_field('special_image_type');
 	$mod_row = get_row_index();
 ?>
-<section class="copy-image module <?php echo $pull_wide;?> <?php if($click_enlarge):?> click-enlarge <?php endif;?> <?php echo $orientation;?> ">
+<section class="copy-image module <?php echo $pull_wide;?> <?php echo $img_or_vid;?> <?php if($click_enlarge):?> click-enlarge <?php endif;?> <?php echo $orientation;?> ">
 	<div class="grid-container">
 		<div class="grid-x grid-padding-x<?php if( $orientation == 'copy-left' ):?> medium-flex-dir-row-reverse<?php endif;?>">
 			
 			<div class="left cell small-12 medium-6">
-				<?php if($img_or_vid = 'image'):?>
+				<?php if($img_or_vid == 'image'):?>
 					<?php 
 					$image = get_sub_field('image');
 					if( !empty( $image ) ): ?>
@@ -50,13 +50,13 @@
 						
 					    <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
 					    
-					    <?php if($special_image_type = 'expert'):?>
+					    <?php if($special_image_type == 'expert'):?>
 					    	<div class="expert-credentials">
 						    	<?php the_sub_field('expert_credentials');?>
 					    	</div>
 					    <?php endif;?>
 
-					    <?php if($special_image_type = 'webinar'):?>
+					    <?php if($special_image_type == 'webinar'):?>
 					    	<div class="webinar-label text-right">
 						    	<span class="violet-bg"><span><?php the_sub_field('webinar_label');?></span></span>
 					    	</div>
@@ -65,12 +65,12 @@
 					</div>
 					<?php endif; ?>		
 				<?php endif;?>	
-				<?php if($img_or_vid = 'video'):?>
+				<?php if($img_or_vid == 'video'):?>
 					<div class="video-wrap">
 						<?php
 						
 						// Load value.
-						$iframe = get_field('oembed');
+						$iframe = get_sub_field('video_url');
 						
 						// Use preg_match to find iframe src.
 						preg_match('/src="(.+?)"/', $iframe, $matches);
@@ -101,7 +101,7 @@
 				
 				<div class="grid-x grid-padding-x align-left">
 					
-					<?php if($btn_style = 'solid'):?>
+					<?php if($btn_style == 'solid'):?>
 						<?php 
 						$link = get_sub_field('button_link');
 						if( $link ): 
@@ -122,12 +122,11 @@
 						    $link_target = $link['target'] ? $link['target'] : '_self';
 						    ?>
 						<div class="link-wrap cell shrink">
-						    <a class="button blue-bg" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"><?php echo esc_html( $link_title ); ?></a>
+						    <a class="button royal-bg" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"><?php echo esc_html( $link_title ); ?></a>
 						</div>
 						<?php endif; ?>
 					<?php endif; ?>
-					
-					<?php if($btn_style = 'outline'):?>
+					<?php if($btn_style == 'outlined'):?>
 						<?php 
 						$link = get_sub_field('outline_button_link');
 						if( $link ): 
@@ -135,8 +134,8 @@
 						    $link_title = $link['title'];
 						    $link_target = $link['target'] ? $link['target'] : '_self';
 						    ?>
-						<div class="link-wrap style-outline">
-						    <a class="button outline"><?php echo esc_html( $link_title ); ?></a>
+						<div class="link-wrap cell style-outline">
+						    <a class="button outline small"><?php echo esc_html( $link_title ); ?></a>
 						</div>
 						<?php endif; ?>					
 					<?php endif; ?>

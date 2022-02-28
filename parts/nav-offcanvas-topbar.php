@@ -20,7 +20,7 @@
 						<?php 
 						$image = get_field('header_logo_white', 'option');
 						if( !empty( $image ) ): ?>
-						    <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
+						    <img class="style-svg" src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
 						<?php endif; ?>		
 						
 					<?php else:?>
@@ -39,7 +39,7 @@
 							<?php 
 							$image = get_field('header_logo_white', 'option');
 							if( !empty( $image ) ): ?>
-							    <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
+							    <img class="style-svg" src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
 							<?php endif; ?>							
 						<?php endif;?>
 						

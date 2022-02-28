@@ -34,9 +34,11 @@
 
 	</head>
 			
-	<body <?php body_class(); ?>>
-				
+	<body <?php body_class(); ?> data-equalizer="header-gradient" data-equalize-on="small">
 		<header class="header" role="banner">
+			<div class="bg-wrap has-bg">
+				<div class="bg" data-equalizer-watch="header-gradient"></div>
+			</div>
 					
 			 <!-- This navs will be applied to the topbar, above all content 
 				  To see additional nav styles, visit the /parts directory -->
@@ -45,7 +47,7 @@
 		</header> <!-- end .header -->
 		
 		
-		<div class="off-canvas-wrapper color-theme-<?php the_field('color_theme');?>">
+		<div class="off-canvas-wrapper <?php $color_theme = get_field('color_theme'); if($color_theme): echo ' picked-color color-theme-' . $color_theme; endif;?>">
 			
 			<!-- Load off-canvas container. Feel free to remove if not using. -->			
 			<?php get_template_part( 'parts/content', 'offcanvas' ); ?>

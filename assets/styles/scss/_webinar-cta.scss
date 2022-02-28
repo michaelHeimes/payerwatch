@@ -1,0 +1,30 @@
+.webinar-cta {
+	
+	h2 {
+		font-size: rem-calc(130);
+		line-height: 1.107;
+		font-weight: bold;
+		color: $brand-royal;
+		margin-bottom: -0.3rem;
+		@include breakpoint(medium) {
+			font-size: rem-calc(130);
+		}
+	}
+	h3 {
+		font-size: rem-calc(63);
+		line-height: 1.111;
+		font-weight: bold;
+		color: $brand-violet;
+		@include breakpoint(medium) {
+			font-size: rem-calc(63);
+		}		
+	}
+	
+	a.button {
+		font-size: rem-calc(24);
+		line-height: 1.208;
+		font-weight: bold;
+		padding: 1.146em 1.873em;
+	}
+	
+}

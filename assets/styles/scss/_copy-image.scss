@@ -1,6 +1,19 @@
 .copy-image {
 	
+	.left {
+		@include breakpoint(medium down) {
+			margin-bottom: 1.5rem;
+		}
+	}
+	
+	.link-wrap {
+		&:not(:last-child) {
+			margin-bottom: 1rem;
+		}
+	}
+	
 	.enlarge-btn {
+		font-weight: bold;
 		position: absolute;
 		z-index: 1;
 		cursor: pointer;
@@ -80,17 +93,28 @@
 		}
 		img {
 			position: relative;
-			margin-left: -100px;
+			
+			@include breakpoint(large) {
+				margin-left: -54px;
+			}			
+			@include breakpoint(xlarge) {
+				margin-left: -100px;
+			}
 		}
 		.expert-credentials {
 			flex: 1 0 50%;
 			ul {
 				list-style: none;
-				margin: 0 0 0 -26px;
+				margin: 0 1rem 0 -26px;
 				padding: 0 0 4.937rem;
 				display: flex;
 			    flex-direction: column;
 			    align-items: flex-start;
+			    
+			    @include breakpoint(xlarge) {
+				    margin: 0 0 0 -26px;
+			    }
+			    
 				li {
 					padding: 0.8rem 1.95rem;
 					position: relative;

@@ -1,0 +1,62 @@
+.archive {
+	.filter-buttons-container {
+	    padding-top: 3.3rem;
+	    padding-bottom: 0.1rem;
+	    
+	    @include breakpoint(medium) {
+		    padding-top: 5.3rem;
+		    padding-bottom: 2.1rem;		    
+	    }
+	    
+	    li {
+		    margin-bottom: 1.5rem;
+	    }
+	    
+	}
+	
+	.page-navigation {
+    	margin-top: 1rem;
+    	margin-bottom: 2rem;
+    	@include breakpoint(medium) {
+	    	margin-top: 5.9rem;
+	    	margin-bottom: 5rem;	    	
+    	}
+	}
+	
+	.pagination {
+
+		li {
+			width: 30px;
+			height: 30px;
+			span,
+			a {
+				color: #12058F;
+			    width: 100%;
+				display: flex;
+			    align-items: center;
+			    justify-content: center;
+			    font-weight: bold;
+			}
+			span {
+				border: 1px solid #12058F;
+				border-radius: 100%;
+			}
+			a {
+				transition: .3s ease;
+				path {
+					transition: .3s ease;
+				}
+				&.prev {
+					transform: rotate(180deg);
+				}
+				&:hover {
+					color: $brand-royal;
+					path {
+						fill: $brand-royal;
+					}
+				}
+			}
+		}
+	}
+	
+}

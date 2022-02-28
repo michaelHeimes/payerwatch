@@ -23,7 +23,7 @@ footer.footer {
 		padding-bottom: 2.1rem;
 	}
 	
-	ul.menu:not(#social-links) {
+	ul.menu:not(#social-links):not(.logo-menu) {
 		li {
 			line-height: 1;
 			margin-left: -2px;
@@ -54,7 +54,7 @@ footer.footer {
 
 	&#footer-links1 {
 		li {
-			
+			padding-left: 0.45rem;
 		&.menu-item-has-children {
 			line-height: 1.2;
 			
@@ -101,7 +101,7 @@ footer.footer {
 				
 			&:hover {
 				svg path {
-					fill: #00E37B;
+					fill: $brand-mint-hover;
 				}
 			}
 				

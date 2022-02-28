@@ -2,11 +2,11 @@
 	<div class="grid-container">
 		<div class="grid-x grid-padding-x">
 
-			<div class="cell small-12 medium-6 large-5">
+			<div class="cell small-12 tablet-5 xlarge-5">
 				<?php the_sub_field('copy');?>			
 			</div>
 			
-			<div class="cell small-12 medium-6 large-offset-1">
+			<div class="cell small-12 tablet-6 tablet-offset-1">
 
 				<?php if( have_rows('slider') ):?>
 				<div class="inner slider" data-slide="1" data-equalizer data-equalize-on="small" data-equalize-on-stack="true">

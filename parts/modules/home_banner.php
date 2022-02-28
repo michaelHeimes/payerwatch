@@ -1,4 +1,4 @@
-<div class="banner home-banner royal-navy-gradient-bg">
+<div class="banner home-banner royal-navy-gradient-bg" data-equalizer-watch="header-gradient">
 	<div class="grid-container fluid">
 		<div class="grid-x grid-padding-x">
 			<div class="left cell small-12 medium-6 white">
@@ -49,7 +49,7 @@
 	<?php while ( have_rows('cta') ) : the_row();?>	
 	<div class="grid-container fluid">
 		<div class="grid-x grid-padding-x align-right">
-			<div class="cell shrink">
+			<div class="cell small-12 large-shrink">
 				<div class="inner grid-x grid-padding-x align-middle has-bg">
 					<div class="bg mint-bg"></div>
 					<div class="bg blue-bg"></div>

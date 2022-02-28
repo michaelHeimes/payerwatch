@@ -1,0 +1,70 @@
+article.post-archive-card {
+	margin-bottom: .75rem;
+	@include breakpoint(medium) {
+		margin-bottom: 1.75rem;
+	}
+	.inner {
+		padding: 2.4rem 1.5rem 1.15rem;
+		
+		@include breakpoint(medium) {
+			padding: 3.4rem 2.5rem 1.15rem;
+		}
+		
+		svg {
+			g,
+			path {
+				transition: all .3s ease;
+			}
+			
+			&:hover {
+				g#Ellipse_77 {
+					stroke: $brand-mint;
+				}
+				path {
+					fill: $brand-mint;
+				}			
+			}
+			
+		}
+		
+		a {
+			justify-content: space-between;
+			
+		&:hover {
+			svg {
+				g#Ellipse_77 {
+					stroke: $brand-mint;
+				}
+				path {
+					fill: $brand-mint;
+				}	
+			}
+		}
+			
+		}
+		
+		header.article-header {
+			padding-bottom: 2.65rem;
+			@include breakpoint(medium) {
+				padding-bottom: 4.65rem;
+			}
+		}
+		
+		.archive-tag {
+		    padding-bottom: 1.1rem;
+		    @include breakpoint(medium) {
+			    padding-bottom: 2.1rem;
+		    }
+		}
+		
+		.entry-content {
+		    padding-bottom: 1.1rem;
+		    @include breakpoint(medium) {
+			    padding-bottom: 2.1rem;
+		    }
+		}
+		
+
+		
+	}
+}

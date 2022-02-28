@@ -3,6 +3,16 @@ header.header {
 	position: fixed;
 	z-index: 999;
 	transition: transform .5s ease, background-color .3s ease;
+	.bg-wrap {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		.bg {
+			height: 100vh;
+		}
+	}
 	
 	#top-bar-menu {
 		min-height: 101px;
@@ -16,17 +26,11 @@ header.header {
 			
 		}
 		
-		li.logo {
-			
-			&.desktop {
-				a {
-					padding: 0;
-					display: inline-block;
-					position: relative;
-				    top: -20px;
-				}
+		.logo svg {
+			path,
+			rect {
+				transition: fill .3s ease;
 			}
-			
 		}
 			
 		#main-nav {
@@ -41,6 +45,7 @@ header.header {
 					line-height: rem-calc(12);
 					font-weight: bold;
 					padding: 0.5314rem 1.011rem;
+					transition: color .3s ease;
 					
 				&:hover {
 					text-decoration: underline;
@@ -158,9 +163,23 @@ header.header {
 	
 }
 
+body.has-scrolled.home {
+	header.header {
+		.bg-wrap .bg {
+			min-height: 100vh !important;
+		}
+	}
+}
+
 body.has-scrolled:not(.home) {
 	header.header {
 		background-color: $white;
+		.logo svg {
+			path,
+			rect {
+				fill: $brand-navy;
+			}
+		}
 		#top-bar-menu #main-nav>li a {
 			color: $brand-blue;
 		}

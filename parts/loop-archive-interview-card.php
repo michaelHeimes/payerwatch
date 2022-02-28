@@ -4,28 +4,19 @@
  *
  * Used for single, index, archive, search.
  */
- $first_term = get_the_terms( $post->ID, 'interview_expert' );
- $first_term_name = $first_term[0]->name;
  $expert = get_field('select_expert');
  $expert_name = get_the_title( $expert->ID );
  $permalink = get_permalink( $expert->ID );
  $expert_first_name = str_word_count( $expert_name, 1);
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class('cell small-12 medium-6'); ?> role="article">		
+<article id="post-<?php the_ID(); ?>" <?php post_class('post-archive-card cell small-12 medium-6'); ?> role="article">		
 	<div class="inner royal-blue-bg">				
 		<header class="article-header">
 			<div class="archive-tag white">Interview with <a class="mint" href="<?php echo esc_url( $permalink ); ?>"><?php echo $expert_first_name[0];?></a></div>
 			<h2 class="white"><?php the_title(); ?></h2>
 		</header> <!-- end article header -->
-						
-		<section class="entry-content" itemprop="text">
-			<?php $excerpt = get_the_excerpt();
-				$excerpt = wp_trim_words($excerpt, 40, '...');
-				$result = substr($excerpt, 0, strrpos($excerpt, ' '));	
-				echo $excerpt;
-			?>
-		</section> <!-- end article section -->
+
 		<footer class="article-footer text-right">
 			<a class="white" href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>">
 				<svg xmlns="http://www.w3.org/2000/svg" width="63.059" height="63.06" viewBox="0 0 63.059 63.06">

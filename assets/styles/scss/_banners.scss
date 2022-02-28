@@ -1,11 +1,36 @@
-.banner {
+.banner:not(.home-banner),
+.banner.post-banner {
 	padding-top: 101px;
+	min-height: 405px;
+	
+	.banner-gradient {
+		opacity: .78;
+	}
+	
+	.grid-container {
+		width: 100%;
+	}
+	
+	.banner-img {
+		height: calc(50% + 51px);
+		min-height: 328px;
+		.bg {
+			background-size: cover;
+			background-repeat: no-repeat;
+			background-position: center center;
+		}
+	}
 	
 	.left {
 		position: relative;
 		z-index: 2;
 		padding-top: 3.5rem;
 		padding-bottom: 3.3rem;
+		
+		@include breakpoint(large) {
+			max-width: 50%;
+			min-width: 350px;
+		}
 		
 		.bg.banner-bg-skew {
 			width: calc(100% + 400px);
@@ -24,6 +49,7 @@
 		
 		.bg.theme-color-bg {
 			width: 40%;
+			bottom: 22px;
 		}
 
 		.img-wrap {
@@ -32,4 +58,32 @@
 		}
 	}
 	
+}
+
+.banner.post-banner {
+	.white-accent-wrap {
+		position: absolute;
+		left: 0;
+		right: 0;
+		bottom: -1px;
+	}
+	.white-accent {
+		height: 98px;
+		margin-bottom: -1px;
+		background-color: #F1F9FF;
+		transform: skew($skew);
+		position: relative;
+		
+		&:before {
+			content: '';
+			position: absolute;
+			width: 50vw;
+			left: -50vw;
+			bottom: 0;
+			height: 98px;
+			background-color: #F1F9FF;
+			transform: skew(-$skew) translateX(100px);
+		}
+		
+	}
 }

@@ -1,22 +1,38 @@
-.webinars-slider-module {
-
-	h2 {
-		font-size: rem-calc(66);
-		line-height: 1.106;
-	}
-
-	.webinars-slider {
-		max-width: 542px;
-		margin: auto;
-		
-		.slick-list {
-			overflow: visible;
+.post-slider {
+	max-width: 542px;
+	margin: auto;
 	
-		}
-		article {
-			max-width: 542px;
-			margin: 3px;	
+	.slick-track {
+	    display: flex !important;
+	}
+	
+	.slick-slide {
+	    height: inherit !important;
+	}
+	
+	.slick-list {
+		overflow: visible;
+	}
+	article {
+		max-width: 542px;
+		margin: 3px;
+		a {
+			width: 100%;
 		}
 	}
+	.dots-and-all {
+		ul {
+			padding-bottom: 1rem;
+			flex: 0 0 auto;
+		    min-height: 0;
+		    min-width: 0;
+		    width: 100%;
+		}
+	}
+}
 
+.slider-nav {
+	@include breakpoint(medium) {
+		padding-top: 0.6rem;
+	}
 }

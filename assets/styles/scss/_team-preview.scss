@@ -1,12 +1,19 @@
 .team-preview {
-	height: 600px;
+	//height: 600px;
 	position: relative;
 	
 	
 	
 	.inner {
 		position: relative;
-		margin-right: -.875rem;
+		
+		@include breakpoint(medium down) {
+			padding-top: 3rem;
+		}
+		
+		@include breakpoint(large) {
+			margin-right: -.875rem;
+		}
 		
 /*
 		@include breakpoint(medium) {
@@ -20,19 +27,20 @@
 	
 		.single-card {
 			position: absolute;
-			width: 329px;
+			width: 100%;
+			max-width: 280px;
 			top: 50%;
 			left: 50%;
 			right: 0;
 			z-index: 1;
-			padding: 1.3em 4em 2.1em 3em;
+			padding: 1.3rem 2rem 6.1rem 2rem;
 			border-radius: 4px;
 			background-color: $brand-sky-blue;
 			transition: all 1s ease;
 			
-			@include breakpoint(medium) {
-				max-width: 460px;
-				padding: 4.9em 3em 1.7em;
+			@include breakpoint(large) {
+				max-width: 329px;
+				padding: 4.9rem 3rem 8.5rem 3rem;
 			}
 			
 		&[data-order="1"] {
@@ -46,7 +54,7 @@
 			opacity: 1;
 			transform: translate(-100%, -50%) scale(.7);
 			
-			@include breakpoint(medium) {
+			@include breakpoint(large) {
 				transform: translate(-100%, -50%) scale(.7);
 			}
 			
@@ -116,7 +124,10 @@
 			}
 			
 			.link-wrap {
-				padding-top: 5.25rem;
+				position: absolute;
+				bottom: 1.7rem;
+				right: 2rem;
+				//padding-top: 5.25rem;
 			}
 
 		}
@@ -124,6 +135,8 @@
 	}
 	
 	ul.card-nav {
+		position: relative;
+		z-index: 2;
 		padding: 0;
 		margin-top: -13px;
 	}
@@ -137,9 +150,9 @@
 		&[data-order="1"] {
 			background-color: $brand-blue;			
 			z-index: 3;
-			transform: translate(-50%, 0) scale(.7);
+			transform: translate(-50%, 0) scale(1);
 			
-			@include breakpoint(medium) {
+			@include breakpoint(large) {
 				transform: translate(-50%, 0) scale(1);
 			}
 			
@@ -151,9 +164,9 @@
 
 		&[data-order="2"] {
 			z-index: 2;
-			transform: translate(5%, -50%);
+			transform: translate(5%, -50%) scale(.7);
 			
-			@include breakpoint(medium) {
+			@include breakpoint(large) {
 				transform: translate(5%, -50%)  scale(.7);
 			}
 			
@@ -163,7 +176,7 @@
 			z-index: 1;
 			transform: translate(-105%, -50%)  scale(.7);
 			
-			@include breakpoint(medium) {
+			@include breakpoint(large) {
 				transform: translate(-105%, -50%)  scale(.7);
 			}
 			

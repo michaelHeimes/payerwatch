@@ -5,6 +5,10 @@
 		.inner {
 			padding: 3.4rem 2.5rem 2.75rem;
 			
+			header.article-header {
+				padding-bottom: 0;
+			}
+			
 			a {
 				justify-content: space-between;
 			}

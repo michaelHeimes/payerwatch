@@ -3,7 +3,7 @@
 	<div class="grid-container">
 		<div class="grid-x grid-padding-x">
 			<div class="cell small-12">
-				<div class="grid-x grid-padding-x">
+				<div class="animate grid-x grid-padding-x">
 					<div class="left relative small-12 tablet-4 large-3 large-offset-1 navy-bg">
 						<?php 
 						$image = get_field('alt_preview_image', 'option');

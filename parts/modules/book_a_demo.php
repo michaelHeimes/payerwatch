@@ -2,12 +2,12 @@
 	<div class="grid-container">
 		<div class="grid-x grid-padding-x">
 
-			<div class="left cell small-12 tablet-6 large-7">
+			<div class="left cell small-12 tablet-6 large-6">
 				<div class="video-wrap">
 					<?php
 					
 					// Load value.
-					$iframe = get_field('video_url');
+					$iframe = get_sub_field('video_url');
 					
 					// Use preg_match to find iframe src.
 					preg_match('/src="(.+?)"/', $iframe, $matches);
@@ -32,7 +32,7 @@
 				</div>	
 			</div>
 					
-			<div class="right cell small-12 medium-6 large-5">
+			<div class="right cell small-12 medium-6 large-5 large-offset-1">
 				<div class="copy-wrap relative">
 					<?php the_sub_field('copy');?>
 				</div>

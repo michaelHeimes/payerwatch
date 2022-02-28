@@ -5,9 +5,18 @@
 	
 
 	h2 {
-		font-size: rem-calc(66);
+		font-size: rem-calc(48);
 		line-height: 1.106;
 		margin-bottom: 2.85rem;
+		
+		@include breakpoint(medium) {
+			font-size: rem-calc(56);
+		}
+
+		@include breakpoint(large) {
+			font-size: rem-calc(66);
+		}
+		
 	}
 
 	.pq-slider {

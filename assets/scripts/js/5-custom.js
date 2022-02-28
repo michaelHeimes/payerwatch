@@ -119,17 +119,16 @@ jQuery( document ).ready(function($) {
 	}
 	
 	_app.arrow_checklist = function() {
-		if( $('.copy-and-arrow-checklist li').length ) {
-			$('.copy-and-arrow-checklist li').each(function( index ) {
-				
+		if( $('.copy-and-arrow-checklist .right li').length ) {
+			$('.copy-and-arrow-checklist .right li').each(function( index ) {
+
 				gsap.from( this, {
 					autoAlpha: 0,
 					y: 50,
 					ease: 'power2.out',
 					duration: .7,
 					scrollTrigger: {
-						start: 'bottom bottom+=25px',
-						end: 'bottom top',
+						start: 'top bottom-=50px',
 						toggleActions: "play none none reverse",
 						trigger: this,
 					}
@@ -163,8 +162,8 @@ jQuery( document ).ready(function($) {
 	}
 
 	_app.webinars_slider = function() {
-		if( $('.webinars-slider').length ) {
-			$('.webinars-slider').each(function( index ) {
+		if( $('.post-slider').length ) {
+			$('.post-slider').each(function( index ) {
 				let $slider = $(this);
 				
 				$($slider).slick({
@@ -176,10 +175,21 @@ jQuery( document ).ready(function($) {
 					rows: 0,
 					centerMode: true,
 					speed: 500,
-					infinite: true
+					infinite: true,
+					appendDots:$(this).next().find('.dots-container')
 				});
 				
+				if ($($slider).hasClass('webinars-slider')) {
+					
+					$($slider).next().find('.link-text').text('View All Webinars');					
+				}
+
+				if ($($slider).hasClass('interview-slider')) {
+					$($slider).next().find('.link-text').text('View All Interviews');				
+				}
+
 				
+
 			});
 		}
 	}
@@ -254,33 +264,34 @@ jQuery( document ).ready(function($) {
 	
 	_app.page_banners = function() {
 				
-		if($('.page-banner').length) {
-
-			let leftInner = $('.page-banner .left-inner');
-			let bigBtn = $('.page-banner .btn-link');
-			let themeBg = $('.page-banner .theme-color-bg');
-			let bannerImg = $('.page-banner .right img');
-			
-			let tl = gsap.timeline({scrollTrigger:{
-				trigger: '.page-banner',
-				start:"top 75%",
-				end:"bottom top",
-				delay: .1,
-				toggleActions: "play none none reverse",
-			}})
-			.from(leftInner, {
-				y: 70, opacity:0, ease:"power2.inOut", duration:.5
-			})
-			.from(bigBtn, {
-				x: -70, opacity:0, ease:"power2.inOut", duration:.5
-			}, .2)
-			.from(themeBg, {
-				x: -70, ease:"power2.inOut", duration:.5
-			}, .4)
-			.from(bannerImg, {
-				x: -70, opacity:0, ease:"power2.inOut", duration: 1
-			}, .5)
-			
+		if($('.page-banner:not(.post-banner)').length) {
+			$('.page-banner:not(.post-banner)').imagesLoaded( function() {
+				
+				let leftInner = $('.page-banner .left-inner');
+				let bigBtn = $('.page-banner .btn-link');
+				let themeBg = $('.page-banner .theme-color-bg');
+				let bannerImg = $('.page-banner .right img');
+				
+				let tl = gsap.timeline({scrollTrigger:{
+					trigger: '.page-banner',
+					start:"top 75%",
+					end:"bottom top",
+					delay: .1,
+					toggleActions: "play none none reverse",
+				}})
+				.from(leftInner, {
+					y: 70, opacity:0, ease:"power2.inOut", duration:.5
+				})
+				.from(bigBtn, {
+					x: -70, opacity:0, ease:"power2.inOut", duration:.5
+				}, .2)
+				.from(themeBg, {
+					x: -70, ease:"power2.inOut", duration:.5
+				}, .4)
+				.from(bannerImg, {
+					x: -70, opacity:0, ease:"power2.inOut", duration: 1
+				}, .5)
+			});
 		}
 	}
 	
@@ -500,55 +511,86 @@ jQuery( document ).ready(function($) {
 
 	}
 	
-// Stats Count Up
-	if ($('.graphic-and-stats').length) {
-		
-		$('.graphic-and-stats').each(function(i) {
+	_app.stats_count = function() {
+		if ($('.graphic-and-stats').length) {
 			
-			let $module = $(this);
-		
-			let $num1 = site_js.stats_parent.stat_1.number;
-			let $num2 = site_js.stats_parent.stat_2.number;
-						
-			let counter = { var: 0 };
+			$('.graphic-and-stats').each(function(i) {
+				
+				let $module = $(this);
 			
-			let $value1 = document.getElementById("stat-1");
-			let $value2 = document.getElementById("stat-2");
+				let $num1 = site_js.stats_parent.stat_1.number;
+				let $num2 = site_js.stats_parent.stat_2.number;
+							
+				let counter = { var: 0 };
+				
+				let $value1 = document.getElementById("stat-1");
+				let $value2 = document.getElementById("stat-2");
+			
+				gsap.to(counter, 3, {
+					var: $num1,
+					onUpdate: function() {
+					$value1.innerHTML = numberWithCommas(Math.ceil(counter.var));
+					},
+					ease: Circ.easeOut,
+					scrollTrigger: {
+					    trigger: $value1,
+					    start: 'bottom bottom',
+					    toggleActions: 'play none play reverse'
+					}
+				});
 		
-			gsap.to(counter, 3, {
-				var: $num1,
-				onUpdate: function() {
-				$value1.innerHTML = numberWithCommas(Math.ceil(counter.var));
-				},
-				ease: Circ.easeOut,
-				scrollTrigger: {
-				    trigger: $value1,
-				    start: 'bottom bottom',
-				    toggleActions: 'play none play reverse'
+				var tal2 = document.getElementById("set-2");
+				
+				gsap.to(counter, 3, {
+					var: $num2,
+					onUpdate: function() {
+					$value2.innerHTML = numberWithCommas(Math.ceil(counter.var));
+					},
+					ease: Circ.easeOut,
+					scrollTrigger: {
+					    trigger: $value1,
+					    start: 'bottom bottom',
+					    toggleActions: 'play none play reverse'
+					}
+				});
+							
+				function numberWithCommas(x) {
+					return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 				}
+			
 			});
+			
+		}
+	}
 	
-			var tal2 = document.getElementById("set-2");
-			
-			gsap.to(counter, 3, {
-				var: $num2,
-				onUpdate: function() {
-				$value2.innerHTML = numberWithCommas(Math.ceil(counter.var));
-				},
-				ease: Circ.easeOut,
+	_app.appeal_letter = function() {
+		if ($('.appeal-letter-template').length) {
+
+			gsap.from( '.appeal-letter-template .bg.royal-blue-bg', {
+				autoAlpha: 0,
+				x: '-20%',
+				ease: 'circ.out',
+				duration: .7,
 				scrollTrigger: {
-				    trigger: $value1,
-				    start: 'bottom bottom',
-				    toggleActions: 'play none play reverse'
+					start: 'bottom bottom+=100',
+					toggleActions: "play none none reverse",
+					trigger: '.appeal-letter-template',
 				}
-			});
-						
-			function numberWithCommas(x) {
-				return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-			}
-		
-		});
-		
+			});	
+			
+			gsap.from( '.appeal-letter-template .animate', {
+				autoAlpha: 0,
+				x: '20%',
+				ease: 'circ.out',
+				duration: .7,
+				scrollTrigger: {
+					start: 'bottom bottom+=100',
+					toggleActions: "play none none reverse",
+					trigger: '.appeal-letter-template',
+				}
+			});				
+			
+		}
 	}
 
 			
@@ -566,6 +608,8 @@ jQuery( document ).ready(function($) {
 		_app.arrow_checklist();
 		_app.webinars_slider();
 		_app.team_cards();
+		_app.stats_count();
+		_app.appeal_letter();
 	}
 
 

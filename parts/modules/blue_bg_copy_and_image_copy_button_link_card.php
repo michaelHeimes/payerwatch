@@ -4,8 +4,8 @@
 			
 			<?php if( have_rows('left_card') ):?>
 				<?php while ( have_rows('left_card') ) : the_row();?>	
-				<div class="left has-bg cell small-12 medium-6">
-					<div class="bg royal-blue-bg"></div>
+				<div class="left relative cell small-12 medium-6">
+					<div class="bg royal-blue-bg pull-left"></div>
 					<h2 class="white relative"><?php the_sub_field('heading');?></h2>
 					<div class="g-pipe relative">
 						<span></span>
@@ -26,7 +26,7 @@
 					</div>
 					<?php endif; ?>
 					<h2 class="h3"><?php the_sub_field('wysiwyg_editor');?></h2>
-					<div class="copy-wrap">
+					<div class="copy-wrap medium-copy">
 						<?php the_sub_field('copy');?>
 					</div>		
 					<?php 

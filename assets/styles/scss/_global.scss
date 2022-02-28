@@ -34,16 +34,26 @@ a {
 }
 
 .medium-copy,
-.medium-copy p {
-	font-size: rem-calc(20);
+.medium-copy p,
+.entry-content ul li {
+	font-size: rem-calc(16);
 	line-height: 1.5;
+	@include breakpoint(medium) {
+		font-size: rem-calc(20);
+	}
 }
 
 .large-copy,
 .large-copy p,
 .large-copy li {
-	font-size: rem-calc(30);
+	font-size: rem-calc(21);
 	line-height: 1.3333;
+	@include breakpoint(medium) {
+		font-size: rem-calc(24);
+	}
+	@include breakpoint(tablet) {
+		font-size: rem-calc(30);
+	}
 }
 
 a.view-all-link {
@@ -70,6 +80,14 @@ a.view-all-link {
 
 .brand-blue {
 	color: $brand-blue !important;
+}
+
+.brand-royal {
+	color: $brand-royal !important;
+}
+
+.violet {
+	color: $brand-violet !important;
 }
 
 .bold {
@@ -156,8 +174,8 @@ POSTS & CONTENT STYLES
 } 
 
 .module {
-	padding-top: 2rem;
-	padding-bottom: 2rem;
+	padding-top: 2.5rem;
+	padding-bottom: 2.5rem;
 	@include breakpoint (medium) {
 		padding-top: 3.5rem;
 		padding-bottom: 3.5rem;	
@@ -232,40 +250,49 @@ button:not(.large):not([role="tab"]):not(.team-dot),
 	background-color: $white;
 }
 
+.sky-blue-bg {
+	background-color: $brand-sky-blue;
+}
+
+.royal-blue-bg,
+.blue-bg,
+.navy-bg,
+.violet-bg,
+.mint-bg {
+	color: $white;
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		color: $white;
+	}	
+}
+
 .royal-blue-bg {
 	background-color: $brand-royal;
-	color: $white;
 }
 
 .blue-bg {
 	background-color: $brand-blue;
-	color: $white;	
 }
 
 .navy-bg {
 	background-color: $brand-navy;
-	color: $white;
 }
 
 .violet-bg {
 	background-color: $brand-violet;
-	color: $white;
 }
 
-.mint-bg,
-.color-theme-mint-green .theme-color-bg {
+.mint-bg {
 	background-color: $brand-mint;
-	color: $white;
 }
 
-.violet-bg {
-	background-color: $brand-violet;
-	color: $white;
-}
 
 
 .royal-navy-gradient-bg,
-body.home.has-scrolled header.header {
+body.home.has-scrolled header.header .bg {
 	background-image: linear-gradient(180deg, #201dd0 0%, #0e0f7f 18.2%, #0b0e5c 34.5%, #050a38 55.7%, #0b032e 100%);
 }
 
@@ -273,10 +300,14 @@ body.home.has-scrolled header.header {
 	background-image: linear-gradient(64.37deg, #00fab8 0%, #079b74 100%);
 }
 
+button.close-button {
+	margin-bottom: 1.5rem;
+}
+
 a.wp-block-button__link,
 button, 
 a.button {
-	&:not([role="tab"]) {
+	&:not([role="tab"]):not(.close-button):not(.enlarge-btn) {
 		line-height: 1;
 		padding: 1em 2.7223em;
 		border-radius: 0;
@@ -305,8 +336,8 @@ a.button {
 			color: $brand-navy;
 			
 		&:hover {
-			border-color: #00E37B;
-			background-color: #00E37B;
+			border-color: $brand-mint-hover;
+			background-color: $brand-mint-hover;
 		}
 		
 		}
@@ -378,7 +409,7 @@ a.button {
 					opacity: 0;
 				}
 				.arrow {
-					background-color: #00E37B;
+					background-color: $brand-mint-hover;
 				}
 			}
 	
@@ -410,7 +441,7 @@ a.vm-link {
 	width: 100%;
 }
 
-a.wp-block-button__link:not([role=tab]) {
+a.wp-block-button__link:not([role=tab]):not(.close-button):not(.enlarge-btn) {
 	background-color: $brand-mint;
 	color: $brand-navy;
 	width: 100%;
@@ -420,8 +451,8 @@ a.wp-block-button__link:not([role=tab]) {
 	border-color: $brand-mint;
 	
 &:hover {
-	border-color: #00E37B;
-	background-color: #00E37B;
+	border-color: $brand-mint-hover;
+	background-color: $brand-mint-hover;
 	color: $brand-navy;
 }
 
