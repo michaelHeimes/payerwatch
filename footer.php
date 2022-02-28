@@ -25,7 +25,7 @@
 								</ul>
 							</div>
 							
-							<div class="right small-12 tablet-auto xlarge-offset-1">
+							<div class="right cell small-12 tablet-auto xlarge-offset-1">
 								<div class="grid-x grid-padding-x">
 									<div class="cell small-12 medium-6">
 										

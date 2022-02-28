@@ -43,10 +43,10 @@ article.post-archive-card {
 			
 		}
 		
-		header.article-header {
-			padding-bottom: 2.65rem;
+		footer.article-footer {
+			padding-top: 2.65rem;
 			@include breakpoint(medium) {
-				padding-bottom: 4.65rem;
+				padding-top: 4.65rem;
 			}
 		}
 		

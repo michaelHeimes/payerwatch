@@ -5,7 +5,7 @@
 			<?php $heading = get_sub_field('heading');
 				if($heading):?>
 			<div class="cell small-12 large-10 large-offset-1">
-				<h2 class="violet"><?php the_sub_field('heading');?></h2>
+				<h2 class="violet h3 big-h3"><?php the_sub_field('heading');?></h2>
 			</div>
 			<?php endif;?>
 			

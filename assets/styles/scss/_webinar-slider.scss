@@ -1,7 +1,13 @@
+.slider-module {
+	h2 {
+		margin-bottom: 3.25rem;
+	}
+}
+
 .post-slider {
 	max-width: 542px;
 	margin: auto;
-	
+		
 	.slick-track {
 	    display: flex !important;
 	}

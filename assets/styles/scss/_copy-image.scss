@@ -207,7 +207,10 @@
 	
 	&.copy-left {
 		.enlarge-btn {
-			transform: translate(-22px, -50%);
+			transform: translate(0px, -50%);
+			@include breakpoint(xxlarge) {
+				transform: translate(-22px, -50%);
+			}
 		}
 		.img-wrap {
 			padding-top: 8.5rem;
@@ -224,7 +227,10 @@
 
 	&.copy-right {
 		.enlarge-btn {
-			transform: translate(-22px, -50%);
+			transform: translate(0px, -50%);
+			@include breakpoint(xxlarge) {
+				transform: translate(-22px, -50%);
+			}
 		}
 		.img-wrap {
 			padding-top: 7.1rem;

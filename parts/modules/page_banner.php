@@ -13,7 +13,7 @@
 	</div>
 	<div class="grid-container fluid">
 		<div class="banner-inner grid-x grid-padding-x">
-			<div class="left cell small-12 medium-6 large-shrink large-offset-1 white">
+			<div class="left cell shrink tablet-shrink large-shrink large-offset-1 white">
 				<div class="bg blue-bg banner-bg-skew"></div>
 				<div class="left-inner relative">
 				<?php if(is_archive()):?>
@@ -51,7 +51,7 @@
 				<?php endif; ?>				
 				</div>
 			</div>
-			<div class="right cell small-12 medium-6 large-5">
+			<div class="right cell small-12 tablet-auto large-5">
 				<div class="bg theme-color-bg banner-bg-skew"></div>
 				<?php 
 				$image = get_sub_field('image');

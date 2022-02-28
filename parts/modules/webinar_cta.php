@@ -4,7 +4,7 @@
 
 			<div class="left cell small-12 medium-6 large-5">
 				<h2><?php the_sub_field('large_heading');?></h2>
-				<h3><?php the_sub_field('small_heading');?></h3>
+				<h3 class="big-h3 violet"><?php the_sub_field('small_heading');?></h3>
 			</div>
 			
 			<div class="left cell small-12 medium-6 large-7">

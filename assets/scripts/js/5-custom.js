@@ -153,7 +153,15 @@ jQuery( document ).ready(function($) {
 					rows: 0,
 					centerMode: true,
 					speed: 500,
-					infinite: true
+					infinite: true,
+					responsive: [
+						{
+							breakpoint: 480,
+							settings: {
+								centerMode: false,
+							},
+						}
+					]
 				});
 				
 				

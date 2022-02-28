@@ -20,6 +20,16 @@ h2,
 h3,
 .h3 {
 	line-height: 1.2857;
+	
+&.big-h3 {
+	font-size: rem-calc(44);
+	line-height: 1.111;
+	font-weight: bold;
+	color: $brand-violet;
+	@include breakpoint(medium) {
+		font-size: rem-calc(63);
+	}		
+}
 }
 
 .jumbo {
@@ -38,7 +48,7 @@ a {
 .entry-content ul li {
 	font-size: rem-calc(16);
 	line-height: 1.5;
-	@include breakpoint(medium) {
+	@include breakpoint(tablet) {
 		font-size: rem-calc(20);
 	}
 }
@@ -242,8 +252,14 @@ button:not(.large):not([role="tab"]):not(.team-dot),
 }
 
 .bg.pull-left {
-	width: 150%;
-    left: -50%;
+	width: 128%;
+    left: -28%;
+}
+
+.bg.pull-right {
+	width: 128%;
+	left: auto;
+    right: -28%;
 }
 
 .white-bg {

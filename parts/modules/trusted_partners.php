@@ -12,7 +12,7 @@
 		if( $images ): ?>
 			<div class="grid-x grid-padding-x align-center">
 	        <?php foreach( $images as $image ): ?>
-	            <div class="cell shrink text-center">
+	            <div class="single-partner cell small-6 medium-shrink text-center grid-x align-middle align-center">
 	                <img src="<?php echo esc_url($image['sizes']['thumbnail']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
 	            </div>
 	        <?php endforeach; ?>

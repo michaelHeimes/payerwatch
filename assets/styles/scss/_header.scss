@@ -2,7 +2,7 @@ header.header {
 	width: 100%;
 	position: fixed;
 	z-index: 999;
-	transition: transform .5s ease, background-color .3s ease;
+	transition: transform .5s ease, background-color .2s ease;
 	.bg-wrap {
 		position: absolute;
 		top: 0;
@@ -15,7 +15,11 @@ header.header {
 	}
 	
 	#top-bar-menu {
-		min-height: 101px;
+		min-height: 70px;
+		
+		@include breakpoint(medium) {
+			min-height: 101px;
+		}
 		
 		.top-bar-left {
 			max-width: 160px;
@@ -35,8 +39,9 @@ header.header {
 			
 		#main-nav {
 			align-items: center;
+			justify-content: flex-end;
 			>li {
-				margin: 1.05rem 0 1.3rem 1.8rem;
+				margin: .25rem 0 .25rem 1.8rem;
 				
 				a {
 					color: $white;
@@ -78,9 +83,13 @@ header.header {
 					
 				}
 				
-				ul.submenu {
+				ul.submenu.is-dropdown-submenu {
 					background-color: $white;
 					box-shadow: 0px 3px 6px 0px rgba(0,0,0,0.51);
+					
+				&.first-sub {
+					margin-left: 1rem;
+				}
 					
 					li {
 						a {
@@ -140,6 +149,7 @@ header.header {
 				    width: 36px;
 				    height: 4px;
 				    background-color: $white;
+				    transition: background-color .2s ease;
 				    
 				    &:nth-child(1) {
 					    top: 4px;
@@ -183,5 +193,38 @@ body.has-scrolled:not(.home) {
 		#top-bar-menu #main-nav>li a {
 			color: $brand-blue;
 		}
+		#top-bar-menu .menu-toggle-wrap a#menu-toggle span {
+			background-color: $brand-blue;
+		}
+	}
+}
+
+ul#offcanvas-nav {
+	padding: 1rem;
+
+&.accordion-menu .is-accordion-submenu-parent:not(.has-submenu-toggle)>a:after {
+	position: relative;
+	border-color: $brand-navy transparent transparent;
+	margin-top: 6px;
+	margin-left: .5rem;
+	width: 10px;
+}
+
+	li {
+		margin-bottom: 1.5rem;
+		a {
+			display: flex;
+			justify-content: space-between;
+			align-items: flex-start;
+			color: $brand-navy;
+			line-height: 1.5;
+			text-transform: uppercase;
+			font-weight: 700;
+		}
+		
+		>ul.submenu {
+			padding: 1.5rem 0 0 1.5rem;
+		}
+		
 	}
 }

@@ -35,8 +35,10 @@
 			}
 
 		&.widen {
-			width: 450px;
-			transition: width .5s ease;
+			@include breakpoint(medium) {
+				width: 450px;
+				transition: width .5s ease;
+			}
 			
 			.inner {
 				background-color: $brand-navy;

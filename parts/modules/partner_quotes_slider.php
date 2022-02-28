@@ -13,11 +13,11 @@
 								<?php 
 								$image = get_sub_field('photo');
 								if( !empty( $image ) ): ?>
-								<div class="img-wrap cell shrink">
+								<div class="img-wrap cell small-12 medium-shrink">
 								    <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
 								</div>
 								<?php endif; ?>	
-								<div class="name-title cell auto">
+								<div class="name-title cell small-12 medium-auto">
 									<h3 class="brand-blue medium-copy bold"><?php the_sub_field('name');?></h3>
 									<h4 class="p"><?php the_sub_field('title');?></h4>
 								</div>						
