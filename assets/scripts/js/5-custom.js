@@ -580,7 +580,7 @@ jQuery( document ).ready(function($) {
 				ease: 'circ.out',
 				duration: .7,
 				scrollTrigger: {
-					start: 'bottom bottom+=100',
+					start: 'top 75%',
 					toggleActions: "play none none reverse",
 					trigger: '.appeal-letter-template',
 				}
@@ -592,7 +592,7 @@ jQuery( document ).ready(function($) {
 				ease: 'circ.out',
 				duration: .7,
 				scrollTrigger: {
-					start: 'bottom bottom+=100',
+					start: 'top 75%',
 					toggleActions: "play none none reverse",
 					trigger: '.appeal-letter-template',
 				}

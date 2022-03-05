@@ -16,8 +16,10 @@
 					<div class="right small-12 tablet-8 large-8 relative">
 						<div class="bg navy-bg"></div>
 						<h2 class="white relative"><?php the_field('alt_heading', 'option');?></h2>
-						<h3 class="white relative"><?php the_field('alt_text', 'option');?></h3>
-						Form
+						<div class="form-wrap relative">
+							<p class="white relative"><?php the_field('alt_text', 'option');?></p>
+							<?php gravity_form( 3, false, false, false, '', true );?>
+						</div>
 					</div>					
 				</div>
 			</div>

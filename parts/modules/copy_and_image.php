@@ -97,8 +97,9 @@
 			</div>
 
 			<div class="right cell small-12 medium-6">
-				<?php the_sub_field('copy');?>
-				
+				<div class="copy-wrap">
+					<?php the_sub_field('copy');?>
+				</div>
 				<div class="grid-x grid-padding-x align-left">
 					
 					<?php if($btn_style == 'solid'):?>

@@ -20,7 +20,8 @@
                 "violet": "Violet",
                 "neon-yellow": "Neon Yellow",
                 "blue": "Blue",
-                "lime-blue-gradient": "Lime to Blue Gradient"
+                "lime-blue-gradient": "Lime to Blue Gradient",
+                "blue-lime-blue-gradient": "Blue to Lime to Blue Gradient"
             },
             "allow_null": 0,
             "other_choice": 0,
@@ -53,5 +54,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1645900189
+    "modified": 1646323038
 }

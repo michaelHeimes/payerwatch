@@ -1,0 +1,49 @@
+.events.module {
+	padding-top: 3.7rem;
+	padding-bottom: 4.45rem;
+	@include breakpoint(medium) {
+		padding-top: 4.7rem;
+		padding-bottom: 6.45rem;		
+	}
+	h2 {
+		margin-bottom: 0.58em;
+	}
+}
+
+article.event-card {
+	margin-bottom: 1.75rem;
+	.date {
+		padding: 0.4rem 1rem;
+		margin-bottom: 1.9rem;
+		
+		.bg {
+			transform: skew(-$skew) translateX(-15px);
+		}
+		span {
+			font-weight: bold;
+			position: relative;
+			
+		}
+	}
+	
+	h3 {
+		font-weight: 400;
+	}
+	
+	.vm-link {
+		span {
+			margin-right: 1.1rem;
+		}
+	}
+	
+	footer {
+		padding-top: 1.05rem;
+	}
+	
+	a:hover {
+		svg {
+			transform: translateX(1rem);			
+		}
+	}
+	
+}

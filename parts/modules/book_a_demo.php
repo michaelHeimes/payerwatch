@@ -32,22 +32,19 @@
 				</div>	
 			</div>
 					
-			<div class="right cell small-12 medium-6 large-5 large-offset-1">
+			<div class="right cell small-12 tablet--6 large-5 large-offset-1">
 				<div class="copy-wrap relative">
 					<?php the_sub_field('copy');?>
 				</div>
-				<div class="book has-bg">
-					<div class="accent bg grid-x">
-						<?php 
-						$image = get_sub_field('skewed_image');
-						if( !empty( $image ) ): ?>
-						<div class="img-wrap">
-							<span></span>
-						    <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
-						    <span></span>
-						</div>
-						<?php endif; ?>
+				<div class="book relative">
+					<div class="bg pull-right"></div>
+					<?php 
+					$image = get_sub_field('skewed_image');
+					if( !empty( $image ) ): ?>
+					<div class="img-wrap relative">
+					    <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
 					</div>
+					<?php endif; ?>
 					<?php 
 					$link = get_sub_field('button_link');
 					if( $link ): 

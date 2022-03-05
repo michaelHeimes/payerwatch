@@ -2,7 +2,7 @@
 	<div class="grid-container">
 		<div class="grid-x grid-padding-x">
 			<div class="cell small-12 text-center">
-				<h2><?php the_field('tp_small_heading', 'options');?></h2>
+				<h2 class="small-copy"><?php the_field('tp_small_heading', 'options');?></h2>
 				<h3><?php the_field('tp_large_heading', 'options');?></h3>
 			</div>
 		</div>

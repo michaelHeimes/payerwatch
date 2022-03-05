@@ -15,9 +15,15 @@
 		padding-top: 2.9rem;
 		padding-bottom: 2.9rem;
 		padding-left: 2.03125rem;
+		@include breakpoint(medium down) {
+			padding-right: 2.03125rem;
+		}
 		.bg {
 			width: 100vw;
 			right: -50vw;
+		}
+		.ginput_container_checkbox {
+		    padding-top: 0.45rem;
 		}
 	}
 	

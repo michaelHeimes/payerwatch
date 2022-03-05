@@ -22,6 +22,10 @@
 	
 		get_template_part('parts/modules/book_a_demo');
 
+	elseif ( get_row_layout() == 'contact_form' ) : 
+	
+		get_template_part('parts/modules/contact_form');
+
 	elseif ( get_row_layout() == 'copy_and_arrow_checklist' ) : 
 	
 		get_template_part('parts/modules/copy_and_arrow_checklist');
@@ -45,6 +49,10 @@
 	elseif ( get_row_layout() == 'expanding_card_slider' ) : 
 	
 		get_template_part('parts/modules/expanding_card_slider');
+		
+	elseif ( get_row_layout() == 'events' ) : 
+	
+		get_template_part('parts/modules/events');
 
 	elseif ( get_row_layout() == 'partner_quotes_slider' ) : 
 	

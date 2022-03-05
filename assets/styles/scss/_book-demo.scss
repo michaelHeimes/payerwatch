@@ -20,11 +20,46 @@
 	
 	}
 	
+	.left {
+		@include breakpoint(tablet down) {
+			margin-bottom: 2rem;
+		}
+	}
 	
+	.right {
+		.bg.pull-right {
+			transform: skew(-$skew);
+			width: 120%;
+			background-color: $brand-mint;
+		}
+		.book {
+			.img-wrap {
+				height: 261px;
+				@include breakpoint(large) {
+					height: 361px;
+				}
+				img {
+					max-height: 100%;
+				}
+			}
+		}
+	}
 
 	.link-wrap {
-		padding-top: 8.15rem;
-		padding-bottom: 9.3rem;
+		position: absolute;
+		top: 50%;
+		left: 0;
+		transform: translate(0%, -50%);
+		a.button {
+			font-size: rem-calc(18);
+			line-height: 1.208;
+			font-weight: bold;
+			padding: 1.146em 1.873em;
+			white-space: nowrap;
+			@include breakpoint(large) {
+				font-size: rem-calc(24);
+			}
+		}
 	}
 	
 }

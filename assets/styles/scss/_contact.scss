@@ -1,0 +1,38 @@
+.contact-form {
+	color: $white;
+	.inner {
+		padding-top: 4.4rem;
+		padding-bottom: 3.75rem;
+		@include breakpoint(tablet down) {
+			padding-left: 1rem;
+			padding-right: 1rem;
+		}
+		&:after {
+			content: '';
+			position: absolute;
+			top: 0;
+			right: -50vw;
+			bottom: 0;
+			background-color: $brand-navy;
+			width: 50vw;
+		}
+	}
+	h2 {
+		color: $white;
+		text-transform: uppercase;
+		margin-bottom: 0.4rem;
+		span {
+			color: $brand-mint;
+		}
+	}
+	.contact {
+		padding-bottom: 3.45rem;
+		a {
+			font-size: rem-calc(40);
+			line-height: 1.25;
+			font-weight: bold;
+			color: $white;
+		}
+	}
+		
+}

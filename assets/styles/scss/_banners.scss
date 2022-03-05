@@ -50,6 +50,16 @@
 			width: calc(100% + 400px);
 			left: -300px;
 			
+			&:before {
+				content: '';
+				position: absolute;
+				top: 0;
+				bottom: 0;
+				width: 50vw;
+				left: -50vw;
+				background-color: $brand-blue;
+			}
+			
 			@include breakpoint(large) {
 			}
 			

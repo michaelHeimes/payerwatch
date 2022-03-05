@@ -43,6 +43,12 @@ a {
 	font-size: rem-calc(14);	
 }
 
+.small-copy,
+.small-copy p {
+	font-size: rem-calc(14);
+	line-height: 1.7142;	
+}
+
 .medium-copy,
 .medium-copy p,
 .entry-content ul li {
@@ -111,6 +117,12 @@ a.view-all-link {
 /*********************
 POSTS & CONTENT STYLES
 *********************/
+.wide-width {
+	width: 100%;
+	max-width: 1250px;
+	margin: auto;
+}
+	
 .page-title {
 	
 	// Remove Foundation vcard styling from author page titles
@@ -199,6 +211,86 @@ POSTS & CONTENT STYLES
 	}	
 }
 }
+
+.form-wrap {
+	max-width: 670px;
+	p,
+	.gform_wrapper.gravity-theme .gfield_label_before_complex {
+		font-size: rem-calc(25);
+		line-height: 1;
+		font-weight: bold;
+		margin-bottom: 1.75rem;
+	}
+	.gform_wrapper.gravity-theme .gfield_label_before_complex {
+		padding-top: 0.6rem;
+	}
+}
+
+.gform_wrapper.gravity-theme {
+	label {
+		color: $white;
+		font-size: rem-calc(14);
+	}	
+	input[type=text],
+	input[type=textarea] {
+		font-size: rem-calc(14);
+		padding: 0.8rem;
+		&::placeholder {
+			font-size: rem-calc(14);
+		}	
+	}		
+
+	.gfield_checkbox {
+		margin-top: -0.85rem;
+		.gchoice {
+			position: relative;
+			margin-bottom: 0.3rem;
+		}
+		input {
+			margin-right: .4rem;
+			opacity: 0;
+			&:checked {
+				+ label:before {
+					background-color: $brand-mint;
+				}
+			}
+		}
+		label {
+			position: relative;
+			&:before {
+				content: '';
+				display: block;
+				position: absolute;
+			    top: 3px;
+			    left: -31px;
+				width: 20px;
+				height: 20px;
+				border: 1px solid $brand-mint;
+			}
+		}
+	}
+	.gform_footer {
+		margin-top: 1rem;
+	}
+}
+
+@media (max-width: 640px) {
+	.gform_wrapper.gravity-theme .ginput_complex span {
+		&:not(:last-child) {
+	    	margin-bottom: 1rem;
+	    }
+	    &:last-child {
+		    margin-bottom: 0;
+	    }
+	}
+}
+	
+@media (min-width: 641px) {
+	.gform_wrapper.gravity-theme .ginput_complex:not(.ginput_container_address) fieldset:not([style*="display:none"]):not(.ginput_full), .gform_wrapper.gravity-theme .ginput_complex:not(.ginput_container_address) span:not([style*="display:none"]):not(.ginput_full) {
+	    padding-right: 11px;
+	}
+}
+
 
 .archive-tag {
 	font-size: rem-calc(14);
@@ -322,7 +414,8 @@ button.close-button {
 
 a.wp-block-button__link,
 button, 
-a.button {
+a.button,
+.gform_button {
 	&:not([role="tab"]):not(.close-button):not(.enlarge-btn) {
 		line-height: 1;
 		padding: 1em 2.7223em;
@@ -338,12 +431,17 @@ a.button {
 			border-color: $brand-royal;
 		}
 		
-		&.post-btn {
+		&.post-btn,
+		&[type="submit"] {
 			width: 100%;
 			font-size: rem-calc(24);
 			line-height: 1;
 			color: $brand-navy;
+			background-color: $brand-mint;
 			border-color: $brand-mint;
+			&:hover {
+				background-color: #00E37B;
+			}
 		}
 	
 		&.mint-bg {
@@ -433,6 +531,7 @@ a.button {
 	}
 }
 
+.vm-link,
 a.vm-link {
 	color: $brand-navy;
 	span {

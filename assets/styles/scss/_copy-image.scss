@@ -6,6 +6,10 @@
 		}
 	}
 	
+	.right .copy-wrap {
+		max-width: 511px;
+	}
+	
 	.link-wrap {
 		&:not(:last-child) {
 			margin-bottom: 1rem;

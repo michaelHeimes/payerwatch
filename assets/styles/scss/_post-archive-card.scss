@@ -5,6 +5,7 @@ article.post-archive-card {
 	}
 	.inner {
 		padding: 2.4rem 1.5rem 1.15rem;
+		transition: background-color .3s ease;
 		
 		@include breakpoint(medium) {
 			padding: 3.4rem 2.5rem 1.15rem;
@@ -28,19 +29,8 @@ article.post-archive-card {
 		}
 		
 		a {
+			width: 100%;
 			justify-content: space-between;
-			
-		&:hover {
-			svg {
-				g#Ellipse_77 {
-					stroke: $brand-mint;
-				}
-				path {
-					fill: $brand-mint;
-				}	
-			}
-		}
-			
 		}
 		
 		footer.article-footer {
@@ -64,7 +54,14 @@ article.post-archive-card {
 		    }
 		}
 		
-
+	&.navy-bg:hover {
+		background-color: #12058f;
+	}
+		
+	&.violet-bg:hover {
+		background-color: #9123F0;
+	}
 		
 	}
+	
 }

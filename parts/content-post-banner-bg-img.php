@@ -20,6 +20,10 @@ elseif($post_type == 'expert'):
 
 	the_field('expert_banner_image', 'option');
 
+elseif($post_type == 'event'): 
+
+	the_field('event_banner_image', 'option');
+
 endif;?> );"></div>
 
 
