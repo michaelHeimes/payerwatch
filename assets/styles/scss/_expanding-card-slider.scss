@@ -21,17 +21,22 @@
 			.inner {
 				width: 100%;
 				padding: 3rem 1.8rem;
-				transition: background-color .3s ease;
+				transition: background-color .5s ease;
 			}
 			
-			h3{
-				max-width: 314px;
+			h3 {
+				max-width: 250px;
 				margin-bottom: 0.75rem;
 			}
 			
 			.hidden {
 				opacity: 0;
 				transition: opacity .25s ease 0s;
+				p.large-copy {
+					transition: font-size 0s linear 0s, white-space 0s linear .7s;
+					font-size: 0;
+					//white-space: nowrap;
+				}
 			}
 
 		&.widen {
@@ -46,7 +51,18 @@
 			
 			.hidden {
 				opacity: 1;
-				transition: opacity .25s ease .45s;
+				transition: opacity .25s ease .6s;
+				p.large-copy {
+					transition: font-size 0s linear .5s, white-space 0s linear .6s;
+					white-space: normal;
+					font-size: rem-calc(21);
+					@include breakpoint(medium) {
+						font-size: rem-calc(24);
+					}
+					@include breakpoint(tablet) {
+						font-size: rem-calc(30);
+					}
+				}
 			}
 			
 		}

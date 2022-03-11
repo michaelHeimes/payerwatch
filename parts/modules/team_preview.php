@@ -3,7 +3,18 @@
 		<div class="grid-x grid-padding-x">
 
 			<div class="cell small-12 tablet-5 xlarge-5">
-				<?php the_sub_field('copy');?>			
+				<?php the_sub_field('copy');?>
+					<?php 
+					$link = get_sub_field('link_button');
+					if( $link ): 
+					    $link_url = $link['url'];
+					    $link_title = $link['title'];
+					    $link_target = $link['target'] ? $link['target'] : '_self';
+					    ?>
+					<div class="link-wrap cell shrink">
+					    <a class="button royal-bg" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"><?php echo esc_html( $link_title ); ?></a>
+					</div>	
+					<?php endif;?>
 			</div>
 			
 			<div class="cell small-12 tablet-6 tablet-offset-1">

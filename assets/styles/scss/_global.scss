@@ -44,13 +44,15 @@ a {
 }
 
 .small-copy,
-.small-copy p {
+.small-copy p,
+.small-copy a {
 	font-size: rem-calc(14);
 	line-height: 1.7142;	
 }
 
 .medium-copy,
 .medium-copy p,
+.medium-copy a,
 .entry-content ul li {
 	font-size: rem-calc(16);
 	line-height: 1.5;
@@ -61,6 +63,7 @@ a {
 
 .large-copy,
 .large-copy p,
+.large-copy a,
 .large-copy li {
 	font-size: rem-calc(21);
 	line-height: 1.3333;
@@ -533,6 +536,7 @@ a.button,
 
 .vm-link,
 a.vm-link {
+	display: inline-flex;
 	color: $brand-navy;
 	span {
 		display: inline-block;

@@ -27,10 +27,10 @@
 							</div>
 						</div>
 					</div>
-				
 					<?php endwhile;?>
 				<?php endif;?>
-				</div>		
+				</div>	
+				<div class="dots-container"></div>	
 			</div>					
 		</div>
 	</div>

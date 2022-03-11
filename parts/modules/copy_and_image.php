@@ -111,7 +111,7 @@
 						    $link_target = $link['target'] ? $link['target'] : '_self';
 						    ?>
 						<div class="link-wrap cell shrink">
-						    <a class="button mint-bg"><?php echo esc_html( $link_title ); ?></a>
+						    <a class="button mint-bg" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"><?php echo esc_html( $link_title ); ?></a>
 						</div>
 						<?php endif; ?>
 				

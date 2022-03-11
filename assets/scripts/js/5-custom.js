@@ -53,6 +53,7 @@ jQuery( document ).ready(function($) {
 					slidesToScroll: 1,
 					arrows: false,
 					dots: true,
+					speed: 300,
 					rows: 0,
 					variableWidth: true,
 				}).on({
@@ -154,6 +155,7 @@ jQuery( document ).ready(function($) {
 					centerMode: true,
 					speed: 500,
 					infinite: true,
+					appendDots:$(this).next('.dots-container'),
 					responsive: [
 						{
 							breakpoint: 480,

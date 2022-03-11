@@ -1,5 +1,5 @@
 .slider-module {
-	h2 {
+	h2.h3 {
 		margin-bottom: 3.25rem;
 	}
 }
@@ -22,8 +22,14 @@
 	article {
 		max-width: 542px;
 		margin: 3px;
+		h2 {
+			font-size: rem-calc(30);
+		}
 		a {
 			width: 100%;
+		}
+		.inner footer.article-footer {
+			padding-top: 1rem;
 		}
 	}
 	.dots-and-all {
@@ -38,6 +44,9 @@
 }
 
 .slider-nav {
+	ul.slick-dots {
+		padding-bottom: .5rem;
+	}
 	@include breakpoint(medium) {
 		padding-top: 0.6rem;
 	}

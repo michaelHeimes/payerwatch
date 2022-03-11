@@ -32,8 +32,8 @@
 
 				</div>	
 				<div class="slider-nav grid-x grid-padding-x align-middle align-right">
-					<div class="dots-container cell shrink"></div>
-					<div class="vm-link-wrap text-right cell shrink"><a class="vm-link brand-navy grid-x align-middle" href="/webinars/"><span class="link-text"></span><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="16" height="16" viewBox="0 0 16 16"><defs><clipPath id="clip-path"><rect width="16" height="16" fill="none"></rect></clipPath></defs><g id="Component_7" data-name="Component 7" clip-path="url(#clip-path)"><path id="Path_10" data-name="Path 10" d="M8,0,6.545,1.455l5.506,5.506H0V9.039H12.052L6.545,14.545,8,16l8-8Z" fill="#12058f"></path></g></svg></a></div>
+					<div class="dots-container cell"></div>
+					<div class="vm-link-wrap text-right cell"><a class="vm-link brand-navy grid-x align-middle" href="/webinars/"><span class="link-text"></span><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="16" height="16" viewBox="0 0 16 16"><defs><clipPath id="clip-path"><rect width="16" height="16" fill="none"></rect></clipPath></defs><g id="Component_7" data-name="Component 7" clip-path="url(#clip-path)"><path id="Path_10" data-name="Path 10" d="M8,0,6.545,1.455l5.506,5.506H0V9.039H12.052L6.545,14.545,8,16l8-8Z" fill="#12058f"></path></g></svg></a></div>
 				</div>
 					
 			</div>					

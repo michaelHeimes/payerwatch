@@ -3,6 +3,12 @@ footer.footer {
 	
 	a {
 		color: $white;
+		transition: color .25s ease;
+		
+	&:hover {
+		color: $brand-mint;
+	}
+		
 	}
 	.logo-wrap {
 		margin-bottom: 2rem;
