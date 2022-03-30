@@ -287,7 +287,7 @@
                 "layout_62004012604f1": {
                     "key": "layout_62004012604f1",
                     "name": "appeal_letter_template",
-                    "label": "Appeal Letter Template",
+                    "label": "Lead Capture",
                     "display": "block",
                     "sub_fields": [
                         {
@@ -2032,5 +2032,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1646322705
+    "modified": 1648565205
 }

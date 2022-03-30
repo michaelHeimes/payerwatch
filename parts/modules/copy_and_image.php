@@ -136,7 +136,7 @@
 						    $link_target = $link['target'] ? $link['target'] : '_self';
 						    ?>
 						<div class="link-wrap cell style-outline">
-						    <a class="button outline small"><?php echo esc_html( $link_title ); ?></a>
+						    <a class="button outline small" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"><?php echo esc_html( $link_title ); ?></a>
 						</div>
 						<?php endif; ?>					
 					<?php endif; ?>
