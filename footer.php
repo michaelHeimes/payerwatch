@@ -94,7 +94,7 @@
 					<div class="grid-container fluid">
 						<div class="grid-x grid-padding-x">
 							<div class="cell text-right">
-								<p class="source-org copyright small">&copy; <?php echo date('Y'); ?> <?php bloginfo('name'); ?> | <a href="https://proprdesign.com/" target="_blank">Made by Propr Design</a></p>
+								<p class="source-org copyright small">&copy; <?php echo date('Y'); ?> <?php bloginfo('name'); ?> | <a href="https://proprdesign.com/" target="_blank">Made by Propr</a></p>
 							</div>
 						</div>
 					</div>
