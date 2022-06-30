@@ -43,7 +43,7 @@ const SOURCE = {
 		FOUNDATION + '/dist/js/plugins/foundation.reveal.js',
 // 		FOUNDATION + '/dist/js/plugins/foundation.slider.js',
 		FOUNDATION + '/dist/js/plugins/foundation.smoothScroll.js',
-// 		FOUNDATION + '/dist/js/plugins/foundation.magellan.js',
+ 		FOUNDATION + '/dist/js/plugins/foundation.magellan.js',
 		FOUNDATION + '/dist/js/plugins/foundation.sticky.js',
 // 		FOUNDATION + '/dist/js/plugins/foundation.tabs.js',
 // 		FOUNDATION + '/dist/js/plugins/foundation.responsiveAccordionTabs.js',

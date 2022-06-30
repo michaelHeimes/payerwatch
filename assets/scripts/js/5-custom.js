@@ -602,6 +602,31 @@ jQuery( document ).ready(function($) {
 			
 		}
 	}
+	
+	_app.jump_nav = function(){	 
+		if( $('.sticky-heading-nav-paragraphs').length ) {
+			
+			$(function(){
+				$(".sticky-heading-nav-paragraphs .nav-wrap a.is-active").bind('cssClassChanged', function(){ 
+					console.log("triggered")
+				});
+			});
+			
+			$('.sticky-heading-nav-paragraphs .nav-wrap a').click(function(){
+				
+				if($(this).hasClass('is-active')) {
+					
+				} else {
+					
+					$(this).toggleClass('is-active');
+					$(this).parent().parent().siblings().find('a').removeClass('is-active');
+					
+				}
+			});
+		
+		}
+		
+	}
 
 			
 	_app.init = function() {
@@ -620,6 +645,7 @@ jQuery( document ).ready(function($) {
 		_app.team_cards();
 		_app.stats_count();
 		_app.appeal_letter();
+		_app.jump_nav();
 	}
 
 

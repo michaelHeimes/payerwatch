@@ -57,6 +57,10 @@
 	elseif ( get_row_layout() == 'partner_quotes_slider' ) : 
 	
 		get_template_part('parts/modules/partner_quotes_slider');
+		
+	elseif ( get_row_layout() == 'sticky_heading_nav_paragraphs' ) : 
+		
+		get_template_part('parts/modules/sticky_heading_nav_paragraphs');
 
 	elseif ( get_row_layout() == 'team_preview' ) : 
 	
