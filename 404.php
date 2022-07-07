@@ -8,31 +8,29 @@
 get_header(); ?>
 			
 	<div class="content">
-
-		<div class="inner-content grid-x grid-margin-x grid-padding-x">
+		<div class="grid-container">
+			<div class="inner-content grid-x grid-padding-x">
+		
+				<main class="main small-12 medium-8 medium-offset-2 cell" role="main">
 	
-			<main class="main small-12 medium-8 large-8 cell" role="main">
-
-				<article class="content-not-found">
+					<article class="content-not-found grid-x grid-padding-x align-middle" style="min-height: 400px">
+						<div class="cell">
+							<header class="article-header">
+								<h1>404</h1>
+							</header> <!-- end article header -->
+					
+							<section class="entry-content">
+								<p>The page you're looking for doesn't exist. Please use the navigation at the top of the page or <a href="<?php echo home_url(); ?>">return to the home page.</a></p>
+							</section> <!-- end article section -->
+						</div>
+	
 				
-					<header class="article-header">
-						<h1><?php _e( 'Epic 404 - Article Not Found', 'jointswp' ); ?></h1>
-					</header> <!-- end article header -->
-			
-					<section class="entry-content">
-						<p><?php _e( 'The article you were looking for was not found, but maybe try looking again!', 'jointswp' ); ?></p>
-					</section> <!-- end article section -->
-
-					<section class="search">
-					    <p><?php get_search_form(); ?></p>
-					</section> <!-- end search section -->
-			
-				</article> <!-- end article -->
+					</article> <!-- end article -->
+		
+				</main> <!-- end #main -->
 	
-			</main> <!-- end #main -->
-
-		</div> <!-- end #inner-content -->
-
+			</div> <!-- end #inner-content -->
+		</div>
 	</div> <!-- end #content -->
 
 <?php get_footer(); ?>
