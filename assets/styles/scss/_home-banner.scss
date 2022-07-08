@@ -32,6 +32,11 @@
 	margin-top: -61px;
 	overflow: hidden;
 	padding-bottom: 23px;
+	@include breakpoint(small down) {
+		.cta-left {
+			margin-bottom: 1.5rem;
+		}
+	}
 	.inner {
 		padding: 1.55rem 1rem 1.5rem 1.95rem;
 		overflow: visible;

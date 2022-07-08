@@ -55,10 +55,10 @@
 				<div class="inner grid-x grid-padding-x align-middle has-bg">
 					<div class="bg mint-bg"></div>
 					<div class="bg blue-bg"></div>
-					<div class="cell auto white relative">
+					<div class="cta-left cell small-12 medium-auto white relative">
 						<?php the_sub_field('text');?>
 					</div>
-					<div class="cell shrink relative">
+					<div class="cta-right cell small-12 medium-shrink relative">
 						<?php 
 						$link = get_sub_field('button_link');
 						if( $link ): 
