@@ -1,0 +1,20 @@
+.dual-wysiwyg-editors {
+	.cell {
+		padding-top: 3rem;
+		padding-bottom: 3rem;
+		
+		@include breakpoint(medium) {
+			padding-top: 4.5rem;
+			padding-bottom: 4.5rem;
+		}
+		
+		ul {
+			padding: 1.5rem;
+		}
+		
+		form {
+			padding: 0 3rem;
+		}
+		
+	}
+}

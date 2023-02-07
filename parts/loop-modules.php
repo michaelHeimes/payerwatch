@@ -86,6 +86,10 @@
 	
 		get_template_part('parts/modules/wysiwyg_editor');
 	
+	elseif ( get_row_layout() == 'dual_wysiwyg_editors' ) : 
+	
+	get_template_part('parts/modules/dual_wysiwyg_editors');
+	
 	endif;?>	
 	
 <?php endwhile;?>

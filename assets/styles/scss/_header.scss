@@ -36,6 +36,7 @@ header.header {
 		.logo {
 			max-width: 223px;
 			svg {
+				max-width: 100%;
 				path,
 				rect {
 					transition: fill .3s ease;

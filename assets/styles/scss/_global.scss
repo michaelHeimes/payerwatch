@@ -277,6 +277,20 @@ POSTS & CONTENT STYLES
 	}
 }
 
+.gform_wrapper.gravity-theme .gfield select {
+	background-color: $brand-navy;
+	color: $white;
+	background-size: 16px;
+	background-position: 100% 50%;
+	background-repeat: no-repeat;						
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='9.965' height='5.888' viewBox='0 0 9.965 5.888'%3E%3Cpath id='Path_9856' data-name='Path 9856' d='M4.982,0,4.077.906,7.506,4.335l.619.647h0l-.619.647L4.077,9.059l.906.906L9.965,4.982Z' transform='translate(9.965 -4.077) rotate(90)' fill='%23fff'/%3E%3C/svg%3E%0A");
+	
+	
+	&::placeholder {
+		color: $white;
+	}
+}
+
 @media (max-width: 640px) {
 	.gform_wrapper.gravity-theme .ginput_complex span {
 		&:not(:last-child) {
@@ -368,8 +382,7 @@ button:not(.large):not([role="tab"]):not(.team-dot),
 .royal-blue-bg,
 .blue-bg,
 .navy-bg,
-.violet-bg,
-.mint-bg {
+.violet-bg {
 	color: $white;
 	h2,
 	h3,
@@ -378,6 +391,26 @@ button:not(.large):not([role="tab"]):not(.team-dot),
 	h6 {
 		color: $white;
 	}	
+		
+}
+
+.royal-blue-bg,
+.blue-bg,
+.transparent-bg,
+.violet-bg,
+.mint-bg {
+	.gform_wrapper.gravity-theme {
+		[type=color], [type=date], [type=datetime-local], [type=datetime], [type=email], [type=month], [type=number], [type=password], [type=search], [type=tel], [type=text], [type=time], [type=url], [type=week], textarea, select {
+			background-color: $white;
+			color: $brand-blue;
+			&::placeholder {
+				color: $brand-blue;
+			}
+		}
+		.gform_button:not([role=tab]):not(.close-button):not(.enlarge-btn)[type=submit] {
+			background-color: $white;
+		}
+	}
 }
 
 .royal-blue-bg {

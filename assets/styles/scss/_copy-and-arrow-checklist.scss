@@ -85,3 +85,13 @@
 	}
 	
 }
+
+.royal-blue-bg,
+.blue-bg,
+.navy-bg,
+.violet-bg,
+.mint-bg {
+	.copy-and-arrow-checklist ul li:before {
+		background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24.415' height='24.26' viewBox='0 0 24.415 24.26'%3E%3Cg id='Group_293' data-name='Group 293' transform='translate(-997.723 -1506.795)'%3E%3Cpath id='Path_8640' data-name='Path 8640' d='M3498.889-1303.205h19.217v19.438' transform='translate(-2498.967 2813)' fill='none' stroke='%23ffffff' stroke-width='6'/%3E%3Cpath id='Path_8641' data-name='Path 8641' d='M3518.139-1303.205l-19.3,19.129' transform='translate(-2499 2813)' fill='none' stroke='%23ffffff' stroke-width='6'/%3E%3C/g%3E%3C/svg%3E");
+	}
+}
