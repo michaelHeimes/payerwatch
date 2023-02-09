@@ -71,6 +71,10 @@ CSS file.
 
 // Vendor
 @import "slick";
+@import "./fontawesome/fontawesome";
+// @import "./fontawesome/brands";
+@import "./fontawesome/solid";
+@import "./fontawesome/regular";
 
 // Sections
 @import "global";
@@ -103,3 +107,4 @@ CSS file.
 @import "sticky-heading-nav-paragraphs";
 @import "color-themes";
 @import "dual-wysiwyg";
+@import "icons-labels";

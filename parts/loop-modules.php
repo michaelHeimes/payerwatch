@@ -89,6 +89,10 @@
 	elseif ( get_row_layout() == 'dual_wysiwyg_editors' ) : 
 	
 	get_template_part('parts/modules/dual_wysiwyg_editors');
+
+	elseif ( get_row_layout() == 'icons_labels' ) : 
+	
+	get_template_part('parts/modules/icons_labels');
 	
 	endif;?>	
 	
